@@ -16,7 +16,7 @@
 
                  //   csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "comma_semicolon"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>;; masked-mods = <(MOD_RSFT)>; };
                       cpi: comma_pipe { compatible = "zmk,behavior-mod-morph"; label = "comma_pipe"; #binding-cells = <0>; bindings = <&kp ((((0x07) << 16) | (0x36)))>, <&kp (((((0x07) << 16) | (0x31))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
-                 //                                                                                                                                                     comma                               pipe                lsft rsft                    lsft
+                 //                                                                                                                                            comma                               pipe                lsft rsft                    lsft
 
                  // pcl: period_colon { compatible = "zmk,behavior-mod-morph"; label = "pcl"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; };
                  //  mm_dot_col: mm_dot_col { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; }
@@ -48,7 +48,7 @@
                                             LCMD|LCNTRL   SPACE|to_numb    RET    RET  SPACE|to_symb  RCMD|RCNTRL                           */
 
 /*                        bindings = <
-&tbm TAB   &qex QMARK   &csc COMMA    &pcl DOT    &kp P    &kp Y    &kp M    &kp L    &kp D    &kp C    &kp F   &bsd BSPC
+&tbm TAB   &qex QMARK   &cpi COMMA    &pcl DOT    &kp P    &kp Y    &kp M    &kp L    &kp D    &kp C    &kp F   &bsd BSPC
 &kp LCTRL   &kp O    &kp A     &kp E     &kp I    &kp U    &kp H    &kp N    &kp T    &kp R    &kp S   &kp SQT
 &kp LSFT  &kp AMPS  &kp X     &kp Q     &kp K    &kp J    &kp V    &kp B    &kp G    &kp W    &kp Z   &kp RSFT
                         &kp LCMD    &kp RCTRL   &kp RET  &kp RET  &kp LCTRL   &kp RCMD
