@@ -12,8 +12,8 @@
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' BEHAVIORS
                  /* tbm: tab_minus { compatible = "zmk,behavior-mod-morph"; label ="tbm"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp MINUS>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; */
-                 /* qex: question_exclaim { compatible = "zmk,behavior-mod-morph"; label = "qex"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; */
-                 /* csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; */
+                    qex: question_exclaim { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
+                    csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
           /* comma_pipe: comma_pipe { compatible = "zmk,behavior-mod-morph"; label = "comma_pipe"; #binding-cells = <0>; bindings = <&kp ((((0x07) << 16) | (0x36)))>, <&kp (((((0x07) << 16) | (0x31))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; }; */
                  /* pcl: period_colon { compatible = "zmk,behavior-mod-morph"; label = "pcl"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; }; */
                     bsd: bspc_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; };
@@ -48,10 +48,10 @@ LSHFT|caps sentence  AMPS|FSLH    X        Q              K          J        V 
                         &kp RCMD    &kp RCTRL   &kp RET  &kp RET  &kp LCTRL   &kp LCMD
             >; */
                         bindings = <
-    &kp TAB   &kp N1  &kp N2  &kp N3    &kp P     &kp Y    &kp M     &kp L     &kp D      &kp C    &kp F  &kp BACKSPACE
-  &kp LCTRL   &kp O   &kp A   &kp E     &kp I     &kp U    &kp H     &kp N     &kp T      &kp R    &kp S    &kp SQT
-   &kp LSFT   &kp Z   &kp X   &kp C     &kp V     &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp RSFT
-                            &kp LCMD  &kp SPACE  &kp RET  &kp RET  &kp SPACE  &kp RCMD
+    &kp TAB   &qex QMARK  &csc COMMA  &kp N3    &kp P     &kp Y    &kp M     &kp L     &kp D      &kp C    &kp F  &kp BACKSPACE
+  &kp LCTRL   &kp O       &kp A       &kp E     &kp I     &kp U    &kp H     &kp N     &kp T      &kp R    &kp S    &kp SQT
+   &kp LSFT   &kp Z       &kp X       &kp C     &kp V     &kp B    &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp RSFT
+                                    &kp LCMD  &kp SPACE  &kp RET  &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
 /*                lower_layer {
