@@ -19,7 +19,7 @@
                  //                                                                                                                                               comma                               pipe                lsft rsft                    lsft
 
                  // dots: period_colon { compatible = "zmk,behavior-mod-morph"; label = "pcl"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; };
-            mm_dot_col: mm_dot_col { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; }
+            mm_dot_col: mm_dot_col { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
                                                                                                                                                 //                  DOT                                 COLON               LSFT RSFT                    LSFT
 
         // COMPILES            bsd: bspc_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; };
