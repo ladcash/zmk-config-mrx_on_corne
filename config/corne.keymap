@@ -20,6 +20,7 @@
 
                  // pcl: period_colon { compatible = "zmk,behavior-mod-morph"; label = "pcl"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; };
                  //  mm_dot_col: mm_dot_col { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; }
+                                                                                                                                                //                  DOT                                 COLON               LSFT RSFT                    LSFT
 
         // COMPILES            bsd: bspc_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; };
 
@@ -54,7 +55,7 @@
                         &kp LCMD    &kp RCTRL   &kp RET  &kp RET  &kp LCTRL   &kp RCMD
             >; */
                         bindings = <
-    &kp TAB   &kp N1  &cpi DOT  &kp N3    &kp P      &kp Y    &kp M    &kp L      &kp D      &kp C    &kp F    &kp BACKSPACE
+    &kp TAB   &kp N1  &cpi   &kp N3    &kp P      &kp Y    &kp M    &kp L      &kp D      &kp C    &kp F    &kp BACKSPACE
     &kp LCTRL   &kp O          &kp A       &kp E     &kp I      &kp U    &kp H    &kp N      &kp T      &kp R    &kp S     &kp SQT
    &kp LSFT   &kp Z          &kp X       &kp C     &kp V      &kp B    &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSFT
                                          &kp LCMD  &kp SPACE  &kp RET  &kp RET  &kp SPACE  &kp RCMD
