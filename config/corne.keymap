@@ -7,53 +7,77 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+/*
+    // modmorph.dtsi
+        #define str(s) #s
+        #define MOD_MORPH(NAME, KEY, MOD_KEY) \
+          mm_##NAME: mm_##NAME { \
+            compatible = "zmk,behavior-mod-morph"; \
+            label = str(NAME); \
+            #binding-cells = <0>; \
+            bindings = <&kp KEY>, <&kp MOD_KEY>; \
+            mods = <(MOD_LSFT|MOD_RSFT)>; \
+            masked_mods =  <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
+          "When a modifier specified in mods is being held, it won't be sent along with
+             the morphed keycode unless it is also specified in keep-mods." (keep-mods = 0 by default)
+             bindings = <key value>, <modded key value>;
+                mask-mods: for key values that requires a mod
+                keep-mods: for modded key values that require a mod
+                eg. bindings = <&kp TAB>, */
 
+/*        MOD_MORPH(dot_col, DOT, SEMI)
+        MOD_MORPH(comma_pipe, COMMA, BSLH)
+        MOD_MORPH(lbkt_excl, LBKT, N1)
+        MOD_MORPH(rbkt_at, RBKT, N2)
+        MOD_MORPH(lcbr_hash, LBRC, N3)
+        MOD_MORPH(rcbr_dlr, RBRC, N4)
+        MOD_MORPH(lrbr_amps, LS(N9), AMPS)
+        MOD_MORPH(rrbr_star, LS(N0), STAR)
+        #undef MOD_MORPH
+*/
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' BEHAVIORS
-                 // tbm: tab_minus { compatible = "zmk,behavior-mod-morph"; label ="tbm"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp MINUS>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; */
-                 //   qex: question_exclamation { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
-
-                 //   commas: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "comma_semicolon"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>;; masked-mods = <(MOD_RSFT)>; };
-            comma_pipe: comma_pipe { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "comma_pipe"; bindings = <&kp ((((0x07) << 16) | (0x36)))>, <&kp (((((0x07) << 16) | (0x31))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
-                 //                                                                                                                   comma                               pipe                lsft rsft                    lsft
-
-                 // dots: period_colon { compatible = "zmk,behavior-mod-morph"; label = "pcl"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; };
-               dot_col: dot_col { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "dot_col"; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
-                //                                                                                                                   DOT                                 COLON               LSFT RSFT                    LSFT
-
-        // COMPILES            bsd: bspc_del { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; };
-
-                 // aus: alt_underscore { compatible = "zmk,behavior-mod-morph"; label = "aus"; #binding-cells = <0>; bindings = <&kp LALT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; masked_mods = <(MOD_LALT|MOD_LSFT)>; };
-                 // afs: ampersand_forward_slash { compatible = "zmk,behavior-mod-morph"; label = "afs"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_RSFT)>; };
+             // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; }; // tabesc
+                qex: qmark_exclaim { compatible = "zmk,behavior-mod-morph"; label = "que_exc"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; // keep RSFT: RSFT-QMARK->RSFT-N1, LSFT-QMARK->QMARK
+             // csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "com_scl"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; masked-mods = <(MOD_RSFT)>; }; //
+             // dco: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; }; //
+             // bsd: bspc_delete { compatible = "zmk,behavior-mod-morph"; label = " bac_del"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; }; // keep LSFT: LSFT-BSPC->DEL-FWD, RSFT+BSPC->BSPC
+             // lau: lalt_under { compatible = "zmk,behavior-mod-morph"; label = "lal_und"; #binding-cells = <0>; bindings = <&kp LALT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; masked_mods = <(MOD_LALT|MOD_LSFT)>; }; //
+             // afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_RSFT)>; }; //
         //  SHIFT KEY 'CAPITAL' BEHAVIORS
-                 // cse:  caps_sentence{ compatible = "zmk,behavior-caps-word"; label = "cse"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue-list = <SPACE>; };
-                 // lcs: left_caps_sentence { compatible = "zmk,behavior-hold-tap"; label = "lcs"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&tog caps_sent>, <&osk LSHFT>; };
-                 // rcs: right_caps_sentence { compatible = "zmk,behavior-hold-tap"; label = "rcs"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp caps_sent>, <&osk RSHFT>; };
+             // cse:  caps_sntnc { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue-list = <SPACE>; };
+             // lcs: lsft_csntnc { compatible = "zmk,behavior-hold-tap"; label = "lsf_csn"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&tog caps_sen>, <&osk LSHFT>; };
+             // rcs: rsft_csntnc { compatible = "zmk,behavior-hold-tap"; label = "rsf_csn"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp caps_sen>, <&osk RSHFT>; };
         //  SPACE KEY 'TO LAYERS' BEHAVIORS
-                 // stnl: left_space_to_number { compatible = "zmk,behavior-hold-tap"; label = "stnl"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
-                 // stsl: right_space_to_symbol_layer { compatible = "zmk,behavior-hold-tap"; label = "stsl"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
+             // lsn: left_space_to_number { compatible = "zmk,behavior-hold-tap"; label = "lsp_num"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
+             // rsc: right_space_to_symbol_layer { compatible = "zmk,behavior-hold-tap"; label = "rsp_sym"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
         //  COMMAND KEY 'CONTROL' BEHAVIORS
-                 // lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; label = "lsk"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
-                 // lcc: left_command_control { compatible = "zmk,behavior-hold-tap"; label = "lcc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
-                 // rcc: right_command_control { compatible = "zmk,behavior-hold-tap"; label = "rcc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
+             // lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; label = "lng_stk"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
+             // lcc: left_command_control { compatible = "zmk,behavior-hold-tap"; label = "lcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
+             // rcc: right_command_control { compatible = "zmk,behavior-hold-tap"; label = "rcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
+        /*      EXAMPLES
+                dot_col: dot_col { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "dot_col"; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
+                                                                                                                                          LSFT           DOT                    RSFT         COLON               LSFT RSFT                    LSFT
+                comma_pipe: comma_pipe { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "comma_pipe"; bindings = <&kp ((((0x07) << 16) | (0x36)))>, <&kp (((((0x07) << 16) | (0x31))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
+                                                                                                                                                    LSFT        COMMA                   LSFT        PIPE                LSFT RSFT                    LSFT */
         };
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
 /*
             TAB   &qex QUESTION|EXCL  COMMA|SEMI   DOT|COLON    P        Y            M        L                D        C      F   BACKSPACE|DELETE
        LALT|UNDER        O               A          E           I         U          H        N               T        R      S       SQT|DQT
    LSFT|caps sentence  AMPS|FSLH         X        Q              K          J        V        B              G        W     Z    RSFT|caps sentence
                                             LCMD|LCNTRL   SPACE|to_numb    RET    RET  SPACE|to_symb  RCMD|RCNTRL                           */
-
 /*                        bindings = <
-&tbm TAB   &qex QMARK   &csc COMMA    &pcl DOT    &kp P    &kp Y    &kp M    &kp L    &kp D    &kp C    &kp F   &bsd BSPC
-&kp LCTRL   &kp O    &kp A     &kp E     &kp I    &kp U    &kp H    &kp N    &kp T    &kp R    &kp S   &kp SQT
-&kp LSFT  &kp AMPS  &kp X     &kp Q     &kp K    &kp J    &kp V    &kp B    &kp G    &kp W    &kp Z   &kp RSFT
+&tes   &qex   &csc    &dcl    &kp P    &kp Y    &kp M    &kp L    &kp D    &kp C    &kp F   &bsd
+&lau   &kp O    &kp A     &kp E     &kp I    &kp U    &kp H    &kp N    &kp T    &kp R    &kp S   &kp SQT
+&  &kp AMPS  &kp X     &kp Q     &kp K    &kp J    &kp V    &kp B    &kp G    &kp W    &kp Z   &kp RSFT
                         &kp LCMD    &kp RCTRL   &kp RET  &kp RET  &kp LCTRL   &kp RCMD
-            >; */
+            >;
                         bindings = <
     &kp TAB   &kp N1  &comma_pipe   &dot_col    &kp P      &kp Y    &kp M    &kp L      &kp D      &kp C    &kp F    &kp BACKSPACE
     &kp LCTRL   &kp O          &kp A       &kp E     &kp I      &kp U    &kp H    &kp N      &kp T      &kp R    &kp S     &kp SQT
