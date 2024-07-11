@@ -41,7 +41,7 @@
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' BEHAVIORS
              // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; }; // tabesc
-                qex: qmark_exclaim { compatible = "zmk,behavior-mod-morph"; label = "que_exc"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; }; // keep RSFT: RSFT-QMARK->RSFT-N1, LSFT-QMARK->QMARK
+                qex: qmark_exclaim { compatible = "zmk,behavior-mod-morph"; label = "que_exc"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>;  }; // keep-mods = <(MOD_RSFT)>;keep RSFT: RSFT-QMARK->RSFT-N1, LSFT-QMARK->QMARK
              // csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "com_scl"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; masked-mods = <(MOD_RSFT)>; }; //
              // dco: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; }; //
              // bsd: bspc_delete { compatible = "zmk,behavior-mod-morph"; label = " bac_del"; #binding-cells = <0>; bindings = <&kp BACKSPACE>, <&kp DELETE>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; }; // keep LSFT: LSFT-BSPC->DEL-FWD, RSFT+BSPC->BSPC
@@ -68,16 +68,16 @@
                 compatible = "zmk,keymap";
                 default_layer {
 /*
-            &TAB   &qex &csc   &dco    P        Y            M        L                D        C      F   BACKSPACE|DELETE
-            &lal       O        A          E           I         U          H        N               T        R      S       SQT|DQT
-            &lcs      &afs         X        Q              K          J        V        B              G        W     Z    RSFT|caps sentence
-                                            LCMD|LCNTRL   SPACE|to_numb    RET    RET  SPACE|to_symb  RCMD|RCNTRL
+            &TAB   &qex &csc   &dco    P      Y      M      L         D        C      F   BACKSPACE|DELETE
+            &lal       O        A      E      I      U      H         N               T        R      S       SQT|DQT
+            &lcs      &afs      X      Q      K      J      V         B              G        W     Z    RSFT|caps sentence
+                                            &lcc   &lsn    &RET       RET  SPACE|to_symb  RCMD|RCNTRL
 */
                         bindings = <
-    &kp TAB    &qex   &kp COMMA   &kp DOT   &kp P    &kp Y      &kp M    &kp L     &kp D    &kp C   &kp F   &kp BACKSPACE
-   &kp LCTRL   &kp O    &kp A     &kp E     &kp I    &kp U      &kp H    &kp N     &kp T    &kp R   &kp S   &kp SQT
-   &kp LSFT   &kp AMPS  &kp X     &kp Q     &kp K    &kp J      &kp V    &kp B     &kp G    &kp W   &kp Z    &kp RSFT
-                               &kp LCMD  &kp SPACE  &kp RET    &kp RET  &kp SPACE  &kp RCMD
+    &kp TAB    &qex   &kp COMMA  &kp DOT    &kp P    &kp Y       &kp M     &kp L     &kp D    &kp C    &kp F    &kp BACKSPACE
+   &kp LCTRL   &kp O    &kp A     &kp E     &kp I    &kp U       &kp H     &kp N     &kp T    &kp R    &kp S    &kp SQT
+   &kp LSFT   &kp AMPS  &kp X     &kp Q     &kp K    &kp J       &kp V     &kp B     &kp G    &kp W    &kp Z    &kp RSFT
+                               &kp LCMD  &kp SPACE  &kp RET     &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
 /*                lower_layer {
