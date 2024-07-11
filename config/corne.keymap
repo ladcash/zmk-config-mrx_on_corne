@@ -71,18 +71,13 @@
             TAB   &qex QUESTION|EXCL  COMMA|SEMI   DOT|COLON    P        Y            M        L                D        C      F   BACKSPACE|DELETE
        LALT|UNDER        O               A          E           I         U          H        N               T        R      S       SQT|DQT
    LSFT|caps sentence  AMPS|FSLH         X        Q              K          J        V        B              G        W     Z    RSFT|caps sentence
-                                            LCMD|LCNTRL   SPACE|to_numb    RET    RET  SPACE|to_symb  RCMD|RCNTRL                           */
-/*                        bindings = <
-&tes   &qex   &csc    &dcl    &kp P    &kp Y    &kp M    &kp L    &kp D    &kp C    &kp F   &bsd
-&lau   &kp O    &kp A     &kp E     &kp I    &kp U    &kp H    &kp N    &kp T    &kp R    &kp S   &kp SQT
-&  &kp AMPS  &kp X     &kp Q     &kp K    &kp J    &kp V    &kp B    &kp G    &kp W    &kp Z   &kp RSFT
-                        &kp LCMD    &kp RCTRL   &kp RET  &kp RET  &kp LCTRL   &kp RCMD
-            >;
+                                            LCMD|LCNTRL   SPACE|to_numb    RET    RET  SPACE|to_symb  RCMD|RCNTRL
+*/
                         bindings = <
-    &kp TAB   &kp N1  &comma_pipe   &dot_col    &kp P      &kp Y    &kp M    &kp L      &kp D      &kp C    &kp F    &kp BACKSPACE
-    &kp LCTRL   &kp O          &kp A       &kp E     &kp I      &kp U    &kp H    &kp N      &kp T      &kp R    &kp S     &kp SQT
-   &kp LSFT   &kp Z          &kp X       &kp C     &kp V      &kp B    &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSFT
-                                         &kp LCMD  &kp SPACE  &kp RET  &kp RET  &kp SPACE  &kp RCMD
+    &kp TAB    &qex   &kp COMMA   &kp DOT   &kp P    &kp Y      &kp M    &kp L     &kp D    &kp C   &kp F   &kp BACKSPACE
+   &kp LCTRL   &kp O    &kp A     &kp E     &kp I    &kp U      &kp H    &kp N     &kp T    &kp R   &kp S   &kp SQT
+   &kp LSFT    &kp &    &kp X     &kp Q     &kp K    &kp J      &kp V    &kp B     &kp G    &kp W   &kp Z    &kp RSFT
+                               &kp LCMD  &kp SPACE  &kp RET    &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
 /*                lower_layer {
