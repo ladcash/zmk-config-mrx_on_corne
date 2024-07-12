@@ -40,13 +40,13 @@
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' BEHAVIORS
-             // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; }; // tabesc
+             // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; };
                 qex: qmark_exclaim { compatible = "zmk,behavior-mod-morph"; label = "que_exc"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; };
-                csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "com_scl"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; masked-mods = <(MOD_RSFT)>; };
-                dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(LSFT)>; };
-             // bsd: bspc_delete { compatible = "zmk,behavior-mod-morph"; label = " bsc_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; keep-mods = <(MOD_LSFT)>; };
-             // lau: lalt_under { compatible = "zmk,behavior-mod-morph"; label = "lal_und"; #binding-cells = <0>; bindings = <&kp LALT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; masked_mods = <(MOD_LALT|MOD_LSFT)>; };
-                afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_RSFT)>; };
+                csc: comma_semicolon { compatible = "zmk,behavior-mod-morph"; label = "com_scl"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // masked-mods = <(MOD_RSFT)>; };
+                dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // keep-mods = <(LSFT)>; };
+                bsd: bspc_delete { compatible = "zmk,behavior-mod-morph"; label = " bsc_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; }; // keep-mods = <(MOD_LSFT)>; };
+                lau: lalt_under { compatible = "zmk,behavior-mod-morph"; label = "lal_und"; #binding-cells = <0>; bindings = <&kp LALT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; masked_mods = <(MOD_LALT|MOD_LSFT)>; };
+                afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_RSFT)>; }; // masked_mods = <(MOD_RSFT)>; };
         //  SHIFT KEY 'CAPITAL' BEHAVIORS
              // cse:  caps_sntnc { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue-list = <SPACE>; }; // turns caps-word into caps-sentence... space in continue list
              // lcs: lsft_csntnc { compatible = "zmk,behavior-hold-tap"; label = "lsf_csn"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&tog caps_sen>, <&osk LSHFT>; };
