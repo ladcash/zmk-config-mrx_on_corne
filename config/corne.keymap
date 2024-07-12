@@ -47,9 +47,9 @@
             bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; }; // keep-mods = <(MOD_LSFT)>; };
             lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsu_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_LSFT)>; };
             rsd: rsft_dash { compatible = "zmk,behavior-mod-morph"; label = "rsu_dsh"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp DASH>; mods = <(MOD_LSFT)>; masked_mods = <(MOD_RSFT)>; };
-            //  afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }; masked_mods = <(MOD_RSFT)>; };
+            // afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }; masked_mods = <(MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
-            //  turns caps-word into caps-sentence ('space' in continue list)
+            // turns caps-word into caps-sentence ('space' in continue list)
             // cse:  caps_sntnc { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue-list = <SPACE>; };
             // acs: alt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&tog caps_sen>, <&osk LSHFT>; };
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
@@ -75,9 +75,9 @@
                             &afs          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
-             &kp TAB   &qxm     &csc    &dcl   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BACKSPACE
+             &kp TAB   &qxm     &csc    &dcl    &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &bsd
             &kp LALT   &kp O    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
-            &kp LSFT  &kp AMPS  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
+               &lsu  &kp AMPS   &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &rsd
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
