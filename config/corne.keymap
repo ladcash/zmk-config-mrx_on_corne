@@ -47,7 +47,7 @@
             bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; };
             lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsf_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_LSFT_MOD_RSFT)>; // masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
         //           |                   |                   |                   |                100|                   |                   |                   |                   |                200|                   |
-        //    rsd: rsft_dash { compatible = "zmk,behavior-mod-morph"; label = "rsf_das"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp DASH>; mods = <(MOD_LSFT)>; masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
+            rsd: rsft_dash { compatible = "zmk,behavior-mod-morph"; label = "rsf_das"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp DASH>; mods = <(MOD_LSFT)>; masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
             // afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }; masked_mods = <(MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // turns caps-word into caps-sentence ('space' in continue list)
