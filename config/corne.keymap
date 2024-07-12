@@ -45,7 +45,7 @@
             csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // masked-mods = <(MOD_RSFT)>; };
             dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; };
-            lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsf_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
+            lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsf_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; // masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
         //           |                   |                   |                   |                100|                   |                   |                   |                   |                200|                   |
         //    rsd: rsft_dash { compatible = "zmk,behavior-mod-morph"; label = "rsf_das"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp DASH>; mods = <(MOD_LSFT)>; masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
             // afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }; masked_mods = <(MOD_RSFT)>; };
