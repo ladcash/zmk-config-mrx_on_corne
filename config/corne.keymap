@@ -76,7 +76,7 @@
                             &afs          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
-             &kp TAB   &qxm     &csc    &dcl    &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &bsd
+             &kp TAB   &qxm     &csc    &dcl    &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BACK
             &kp LALT   &kp O    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
                &kp LSFT  &kp AMPS   &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
