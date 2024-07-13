@@ -62,6 +62,12 @@
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
+                    bindings = <
+        &kp N5   &kp N1    &kp N2  &kp N3  &kp P    &kp Y         &kp M    &kp L    &kp D    &kp C   &kp F   kp BSPC
+        &kp LALT  &kp O     &kp A   &kp E   &kp I    &kp U         &kp H    &kp N    &kp T    &kp R   &kp S   &kp SQT
+        &kp LSFT  &kp AMPS  &kp X   &kp Q   &kp K    &kp J         &kp V    &kp B    &kp G    &kp W   &kp Z   &kp RSFT
+        &kp LCMD  &kp SPACE  &kp RET    &kp RET  &kp SPACE  &kp RCMD
+                    >;
 
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
                tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
@@ -70,12 +76,6 @@
                             &afs          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
 
-                        bindings = <
-            &kp TAB   &kp N1    &kp N2  &kp N3  &kp P    &kp Y         &kp M    &kp L    &kp D    &kp C   &kp F   kp BACKSPACE
-            &kp LALT  &kp O     &kp A   &kp E   &kp I    &kp U         &kp H    &kp N    &kp T    &kp R   &kp S   &kp SQT
-            &kp LSFT  &kp AMPS  &kp X   &kp Q   &kp K    &kp J         &kp V    &kp B    &kp G    &kp W   &kp Z   &kp RSFT
-                                     &kp LCMD  &kp SPACE  &kp RET    &kp RET  &kp SPACE  &kp RCMD
-                        >;
                 };
 /*                lower_layer {
 // -----------------------------------------------------------------------------------------
