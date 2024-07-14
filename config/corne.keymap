@@ -41,11 +41,24 @@
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
             // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; };
-            qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; };
-            csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // masked-mods = <(MOD_RSFT)>; };
-            dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // keep-mods = <(LSFT)>; };
-            bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; }; // keep-mods = <(MOD_LSFT)>; };
-            lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsu_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_LSFT)>; };
+            // qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; }; ⎷
+            csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; masked-mods = <(MOD_RSFT)>; };
+            // dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; }; // keep-mods = <(LSFT)>; };
+            // bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT)>; }; // keep-mods = <(MOD_LSFT)>; };
+            // lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsu_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; masked_mods = <(MOD_LSFT)>; };
+            /*
+             * ZMK Behaviors Testing 13jul24 8:409p, ve5f0fea1
+             * testing: Shifted Keys ‘Switching Partners’ Mod-Morph Behaviors ( lower | upper )
+             *      qxm - qmark_xmark:	? | !  ⎷
+             *      css - comma_scolon:	, | :  𝝌 right shift is not masked
+             *      dcl - dot_colon:	. | .  𝝌 right shift is not kept
+             *      bad - back_delete:	pattern: 210||012w bspc: 2||012 ⎷ |  bspc: 32100123 𝝌 left shift is automatically masked
+             *      lsu - lsft_under:	(lt-shift) ⎷ both left & right shift are perfect | (rt-shift)  𝝌 right shift is automatically masked
+             * to-do’s:
+             *      1  css - add masked-mods = <(RSFT)>
+             *      2  figure out how to keep LSFT mod
+             *      3  figure out how to keep RSFT mod
+             */
             //  rsd: rsft_dash { compatible = "zmk,behavior-mod-morph"; label = "rsu_dsh"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp DASH>; mods = <(MOD_LSFT)>; masked_mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  afs: amps_fslsh { compatible = "zmk,behavior-mod-morph"; label = "amp_fsl"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp FSLH>; mods = <(MOD_RSFT)>; }; // masked_mods = <(MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
