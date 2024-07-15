@@ -48,7 +48,7 @@ path: config
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
-               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_LSFT|RSFT)>; };
+               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_LSFT|RSFT)>; };
                qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -57,9 +57,10 @@ path: config
                rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; label = "rsm_min"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                asl: amps_slash { compatible = "zmk,behavior-mod-morph"; label = "amp_sla"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
-            //  turns caps-word into caps-sentence ('space' in continue list)
-            // cse:  caps_sntnc { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue-list = <SPACE>; };
-            // acs: alt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&tog caps_sen>, <&osk LSHFT>; };
+            // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys,
+               cse:  caps_sent { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|RSFT)>; };
+                             //    continue_list = <SPACE>,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
+              // acs: alt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&cse caps_sen>, <&osk LSHFT>; };
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
             // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; label = "lsp_num"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
             // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; label = "rsp_sym"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
@@ -67,23 +68,20 @@ path: config
             // lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; label = "lng_stk"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
             // lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; label = "lcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
             // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; label = "rcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
-        /*      EXAMPLES
-                dot_col: dot_col { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "dot_col"; bindings = <&kp (((((0x07) << 16) | (0x37))))>, <&kp (((((0x07) << 16) | (0x33))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
-                                                                                                                                          LSFT           DOT                    RSFT         COLON               LSFT RSFT                    LSFT
-                comma_pipe: comma_pipe { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; label = "comma_pipe"; bindings = <&kp ((((0x07) << 16) | (0x36)))>, <&kp (((((0x07) << 16) | (0x31))))>; mods = <(0x02|0x20)>; masked_mods = <(0x02)>; };
-                                                                                                                                                    LSFT        COMMA                   LSFT        PIPE                LSFT RSFT                    LSFT */
         };
+
         keymap {
                 compatible = "zmk,keymap";
+              //  &caps_word { continue_list = <SPACE>,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
                 default_layer {
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
                tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
          &acs  alt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
-         &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsft_minus &rsm
+         &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
                             &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
-             &tes   &qxm     &csc    &dcl   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &bsd
+             &tes   &qxm     &csc    &dcl   &cse    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &bsd
             &kp LALT   &kp O    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
             &lsu  &asl  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &rsm
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
