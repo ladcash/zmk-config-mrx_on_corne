@@ -48,7 +48,7 @@ path: config
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
-            // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; };
+               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT|LSFT)>; };
                qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT|MOD_LSFT)>; }; // ⎷
                csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_RSFT|MOD_LSFT)>; }; // ⎷ not one-sided: LSFT = RSFT
                dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
