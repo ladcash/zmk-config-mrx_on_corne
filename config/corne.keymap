@@ -58,7 +58,7 @@ path: config
                asl: amps_slash { compatible = "zmk,behavior-mod-morph"; label = "amp_sla"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys,
-               cse:  caps_sent { compatible = "zmk,behavior-caps-word"; label = "cap_sen"; #binding-cells = <0>; mods = <(MOD_LSFT|RSFT)>; \
+               cse:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|RSFT)>; \
                                    continue_list = <SPACE>; }; //,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
               // acs: alt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&cse caps_sen>, <&osk LSHFT>; };
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
@@ -69,7 +69,7 @@ path: config
             // lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; label = "lcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
             // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; label = "rcm_cnt"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
         };
-
+                        // label = "cap_sen";
         keymap {
                 compatible = "zmk,keymap";
               //  &caps_word { continue_list = <SPACE>,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
