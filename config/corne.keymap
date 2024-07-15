@@ -49,9 +49,9 @@ path: config
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
             // tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESCAPE>; mods = <(MOD_RSFT)>; };
-            // qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT)>; }; ⎷
-            csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_RSFT|MOD_RSFT)>; };
-            // dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+               qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QUESTION>, <&kp EXCLAMATION>; mods = <(MOD_RSFT|MOD_LSFT)>; }; // ⎷
+               csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_RSFT|MOD_LSFT)>; }; // ⎷ not one-sided: LSFT = RSFT
+               dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             // bsd: back_delete { compatible = "zmk,behavior-mod-morph"; label = "bac_del"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|RSFT)>; };
             // lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; label = "lsu_und"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_RSFT)>; };
             /*
@@ -96,7 +96,7 @@ path: config
                             &afs          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
-             &kp TAB   &kp N1     &csc    &kp N2   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BACKSPACE
+             &kp TAB   &qxm     &kp csc    &dcl   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BACKSPACE
             &kp LALT   &kp O    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
             &kp LSFT  &kp AMPS  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
