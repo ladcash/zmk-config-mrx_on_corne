@@ -48,7 +48,7 @@ path: config
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
-               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_LSFT|RSFT)>; };
+               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; label ="tab_esc"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_LSFT|RSFT)>; }; // label ="tab_esc";
                qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; label = "qma_xma"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; label = "com_sem"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; label = "dot_col"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -58,7 +58,7 @@ path: config
                asl: amps_slash { compatible = "zmk,behavior-mod-morph"; label = "amp_sla"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys,
-               cse:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|RSFT)>; continue_list = <SPACE>; };
+             //  cse:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|RSFT)>; continue_list = <SPACE>; };
                                     //,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
               // acs: alt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&cse caps_sen>, <&osk LSHFT>; };
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
