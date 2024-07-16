@@ -71,7 +71,6 @@ path: config
         };
         keymap {
                 compatible = "zmk,keymap";
-              //  &caps_word { continue_list = <SPACE>,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
                 default_layer {
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
                tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
@@ -81,7 +80,7 @@ path: config
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
              &tes   &N1     &N2    &N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &N4
-            &kp LALT   &kp O    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
+            &kp LALT   &kp N0    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
             &LSFT  &N5  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
