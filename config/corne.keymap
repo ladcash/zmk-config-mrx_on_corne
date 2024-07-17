@@ -57,10 +57,9 @@ path: config
             //   rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //   asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
-            // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys,
-               &caps_word { continue-list = <SPACE>, <DOT>, <COMMA>, <SEMI>, <COLON>, <UNDER>, <MINUS>,<AMPS>, <EXCL>, <SLASH>, <TAB>, <STAR>, <PIPE>; };
-               csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>;  };
-               ops: opt_csent { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&csn &caps_word>, <&sk LSHFT>; };
+            // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys, misc flotsam & jetsum
+               &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE>; };
+               ops: opt_csent { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <LALT>, <&caps_word>; };
 //       1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
             // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; label = "lsp_num"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
@@ -75,7 +74,7 @@ path: config
                 default_layer {
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
                tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
-         &acs  opt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
+         &ops  opt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
          &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
                             &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
