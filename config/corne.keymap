@@ -60,8 +60,10 @@ path: config
             //   asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys, misc flotsam & jetsum
-            //   opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = &kp, &kp; };
-//       1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
+            //   csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>;
+                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "hold-preferred"; tapping-term-ms = <200>; bindings = <MOD_LALT>, <CAPS>; };
+            //       1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
+
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
             // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
             // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
@@ -81,7 +83,7 @@ path: config
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
              &tes   &kp N7     &kp N2    &kp N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BSPC
-            &mt LALT CAPS &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
+            &opc     &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
             &kp LSFT  &kp N5  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
