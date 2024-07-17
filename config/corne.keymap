@@ -55,12 +55,12 @@ path: config
             //   bsd: back_delete { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
             //   lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //   rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-               asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //   asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys,
-              // csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>; };
+               csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>; };
                                     //,<N0>,<N1>,<N2>,<N3>,<N4>,<N5>,<N6>,<N7>,<N8>,<N9>,<SQT>,<DQT>,<UNDER>,<SEMI>,<COLON>,<MINUS>,<AMPS>,<TAB>,<STAR>,<PIPE>; };
-              // ocs: opt_capss { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&cse caps_sen>, <&osk LSHFT>; };
+               ocs: opt_capsen { compatible = "zmk,behavior-hold-tap"; label = "alt_csc"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&cse caps_sen>, <&osk LSHFT>; };
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
             // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; label = "lsp_num"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
             // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; label = "rsp_sym"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
@@ -80,8 +80,8 @@ path: config
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
              &kp N1   &kp N7     &kp N2    &kp N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BSPC
-            &kp N5   &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
-            &kp LSFT  &asl  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
+            &ocs   &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
+            &kp LSFT  &kp N5  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
