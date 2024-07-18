@@ -50,27 +50,27 @@ path: config
 / {
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
-               tes: tab_escape { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_RSFT|MOD_RSFT)>; };
-            //   qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
-            //   csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //   dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //   bsd: back_delete { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
-            //   lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //   rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //   asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //    tes: tab_escape { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_RSFT|MOD_RSFT)>; };
+            //    qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
+            //    csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //    dcl: dot_colon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //    bsd: back_delete { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_RSFT)>; };
+            //    lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //    rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //    asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys, misc flotsam & jetsum
-            //   csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>;
-                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "hold-preferred"; tapping-term-ms = <200>; bindings = <MOD_LALT>, <CAPS>; };
+            //    csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>;
+                  opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "hold-preferred"; tapping-term-ms = <200>; bindings = <MOD_LALT>, <&caps_word>; };
             //       1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
-            // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
-            // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
+               // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
+               // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
-            // lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
-            // lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
-            // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
+        // lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
+              // lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
+              // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
         };
         keymap {
                 compatible = "zmk,keymap";
