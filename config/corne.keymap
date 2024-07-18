@@ -61,12 +61,11 @@ path: config
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD BEHAVIOR
             // mods caps-word into caps-sentence: 'space' added to continue list with letters, numbers & punctuation, mod keys, misc flotsam & jetsum
             //    csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>;
-                  opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "hold-preferred"; tapping-term-ms = <200>; bindings = <&kp>, <&caps_word>; };
-            //       1         2         3         4         5         6         7         8         9         0         1         2         3         4         5         6         7         8         9         0         1         2         3
-//  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
-// lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
-// lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&osk LCTRL>; };
-// rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&osk RCTRL>; };
+            //    opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; flavor = "hold-preferred"; tapping-term-ms = <200>; bindings = <&kp>, <&caps_word>; }; // '&opc  LALT 0' in keymap
+            //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
+                lsk: long_sticky_key { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers; };
+                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp LCMD>, <&lsk LCTRL>; };
+            // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp RCMD>, <&lsk RCTRL>; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
                // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
@@ -77,14 +76,14 @@ path: config
                 default_layer {
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
                tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
-         &ops  opt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
+         &opc  opt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
          &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
                             &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
                         bindings = <
              &kp TAB   &kp N7     &kp N2    &kp N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BSPC
-            &opc  LALT 0   &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
-            &kp LSFT  &kp N5  &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
+            &opc LALT  &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
+            &kp LSFT  &lcc 0 0 &kp X   &kp Q   &kp K    &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                    &kp LCMD  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
