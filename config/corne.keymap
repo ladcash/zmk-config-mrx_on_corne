@@ -65,7 +65,7 @@ path: config
             //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
             //
               lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <3000>; quick-release; /delete-property/ignore-modifiers; };
-              lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp>, <&lsk>; }; // '&lcc LCMD LCTRL' in keymap
+            //  lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp>, <&lsk>; }; // '&lcc LCMD LCTRL' in keymap
             // rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&kp>, <&lsk>; }; // '&opc RCMD RCTRL' in keymap
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
@@ -85,7 +85,7 @@ path: config
              &kp TAB   &kp N7     &kp N2    &kp N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BSPC
             &kp LALT  &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
             &kp LSFT  &kp AMPS   &kp X  &kp Q  &kp K  &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
-                                 &lcc LCTRL LCMD &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
+                                 &lsk LCMD &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
 /*                lower_layer {
