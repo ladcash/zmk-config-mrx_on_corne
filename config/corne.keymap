@@ -83,7 +83,7 @@ path: config
                         bindings = <
              &kp TAB   &kp N7     &kp N2    &kp N3   &kp P    &kp Y       &kp M   &kp L    &kp D    &kp C   &kp F   &kp BSPC
             &kp LALT  &kp N6    &kp A   &kp E   &kp I    &kp U       &kp H   &kp N    &kp T    &kp R   &kp S   &kp SQT
-            &kp LSFT  &AMPS   &kp X  &kp Q  &kp K  &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
+            &kp LSFT  &kp AMPS   &kp X  &kp Q  &kp K  &kp J       &kp V   &kp B    &kp G    &kp W   &kp Z   &kp RSFT
                                  &lcc LCMD LCTRL  &kp SPACE  &kp RET   &kp RET  &kp SPACE  &kp RCMD
                         >;
                 };
