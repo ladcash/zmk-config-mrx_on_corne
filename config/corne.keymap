@@ -61,7 +61,7 @@ path: config
             //    asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS
         //  mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
-                csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>;
+                csn:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>; };
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_sent>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc LALT 0' in keymap
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
         //  mods CMND keys to be: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
