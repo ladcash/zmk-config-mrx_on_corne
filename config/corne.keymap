@@ -7,43 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-/*
- * ORIGINAL west.yml
-manifest:
-remotes:
-- name: zmkfirmware
-        url-base: https://github.com/zmkfirmware
-# Additional modules containing boards/shields/custom code can be listed here as well
-# See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
-projects:
-- name: zmk
-        remote: zmkfirmware
-        revision: main
-        import: app/west.yml
-        self:
-path: config
-*/
-/* WORKING west.yml adding urob's stuff
- * manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
-  projects:
-    # - name: zmk
-    #  remote: zmkfirmware
-    #  revision: main
-    #  import: app/west.yml
-    - name: zmk
-      remote: urob
-      revision: masked-mods
-      import: app/west.yml
-  self:
-    path: config
-    */
 
 &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE>; };
 
@@ -61,7 +24,7 @@ path: config
             //    asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS
         //  mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
-                cps:  caps_sent { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; continue_list = <SPACE>; };
+                cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&cps>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc LALT 0' in keymap
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
         //  mods CMND keys to be: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
