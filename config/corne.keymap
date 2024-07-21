@@ -1,16 +1,11 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
+/** Copyright (c) 2020 The ZMK Contributors* * SPDX-License-Identifier: MIT */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+&caps_word { continue-list = <SPACE>; }; //  DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE
 
 / {
-    &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE>; };
         behaviors {
         //  SHIFTED KEYS 'SWITCHING PARTNERS' MOD-MORPH BEHAVIORS
         //  morphs shifted keys: to different shifted & un-shifted characters
@@ -24,8 +19,8 @@
             //    asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS
         //  mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
-                cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
-                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&cps>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc LALT 0' in keymap
+        //        cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
+                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc LALT 0' in keymap
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
         //  mods CMND keys to be: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
             //  lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; }; // /delete-property/ignore-modifiers;
