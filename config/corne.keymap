@@ -46,7 +46,7 @@
             // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
                         bindings = <
             &tes     &qxm    &csc    &dcl    &kp P   &kp Y       &kp M    &kp L      &kp D    &kp C   &kp F   &bsd
-        &opc LALT 0  &kp N6  &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &kp SQT
+        &opc LALT 0  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &kp SQT
             &lsu     &asl    &kp X   &kp Q   &kp K   &kp J       &kp V    &kp B      &kp G    &kp W   &kp Z   &rsm
                                    &lcc LCTRL LCMD &kp SPACE   &kp RET     &kp RET  &kp SPACE  &rcc LCTRL LCMD
                         >;
