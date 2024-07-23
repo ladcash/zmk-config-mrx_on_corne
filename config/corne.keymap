@@ -27,8 +27,8 @@
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
         //  mods CMND keys to be: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
             //    lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; }; // /delete-property/ignore-modifiers;
-                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&sk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
-                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&sk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // ditto
+                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&sk>; tapping-term-ms = <250>;  flavor = "hold-preferred"; }; // '&lcc LCTRL LCMD' in keymap
+                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&sk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
                // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
@@ -38,15 +38,15 @@
                 compatible = "zmk,keymap";
                 default_layer {
             /*  &tes       &qxm     &csc     &dcl                                                         &bsd
-               tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
-         &opc  opt_csc      O        A        E       I      U          H      N        T      R      S     &SQT
+             &SQT   tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
+           opt_csc      O        A        E       I      U          H      N        T      R      S    &opc
          &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
                             &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
                                             &lcc     &lsn                    &rss      &rcc             */
             // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
                         bindings = <
             &tes     &qxm    &csc    &dcl    &kp P   &kp Y       &kp M    &kp L      &kp D    &kp C   &kp F   &bsd
-        &opc LALT 0  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &kp SQT
+            &kp SQT  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &opc LALT 0
             &lsu     &asl    &kp X   &kp Q   &kp K   &kp J       &kp V    &kp B      &kp G    &kp W   &kp Z   &rsm
                                    &lcc LCTRL LCMD &kp SPACE   &kp RET     &kp RET  &kp SPACE  &rcc LCTRL LCMD
                         >;
