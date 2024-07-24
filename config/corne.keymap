@@ -32,8 +32,8 @@
                 rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <375>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
-               // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
-               // rss: rspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
+                rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
+             // lss: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -43,13 +43,13 @@
            opt_csc      O        A        E       I      U          H      N        T      R      S    &opc
          &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
                             &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
-                                            &lcc     &lsn                    &rss      &rcc             */
+                                            &lcc     &SPACE                 &rsn      &rcc             */
             // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
                         bindings = <
-            &tes     &qxm    &csc    &dcl    &kp P   &kp Y       &kp M    &kp L      &kp D    &kp C   &kp F   &bsd
-            &kp SQT  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &opc RALT 0
-            &lsu     &asl    &kp X   &kp Q   &kp K   &kp J       &kp V    &kp B      &kp G    &kp W   &kp Z   &rsm
-                                   &lcc LCTRL LCMD &kp SPACE   &kp RET     &kp RET  &kp SPACE  &rcc LCTRL LCMD
+        &tes    &qxm     &csc       &dcl      &kp P     &kp Y       &kp M    &kp L      &kp D     &kp C     &kp F     &bsd
+     &kp SQT    &kp O    &kp A     &kp E      &kp I     &kp U       &kp H    &kp N      &kp T     &kp R     &kp S     &opc RALT 0
+       &lsu     &asl     &kp X     &kp Q      &kp K     &kp J       &kp V    &kp B      &kp G     &kp W     &kp Z     &rsm
+                         &lcc LCTRL LCMD  &kp SPACE   &kp RET       &kp RET  &rsn  &rcc LCTRL LCMD
                         >;
                 };
 /*                lower_layer {
