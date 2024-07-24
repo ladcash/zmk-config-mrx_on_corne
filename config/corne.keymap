@@ -22,13 +22,14 @@
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS
         //  mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
             //    cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
-                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc LALT 0' in keymap
+            //    caps_word { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
+                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc RALT 0' in keymap
 
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS
         //  mods CMND keys to be: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
                 lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers;} ;
-                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>;  flavor = "hold-preferred"; }; // '&lcc LCTRL LCMD' in keymap
-                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
+                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <375>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
+                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <375>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
                // lsn: lspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
@@ -46,7 +47,7 @@
             // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
                         bindings = <
             &tes     &qxm    &csc    &dcl    &kp P   &kp Y       &kp M    &kp L      &kp D    &kp C   &kp F   &bsd
-            &kp SQT  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &opc LALT 0
+            &kp SQT  &kp O   &kp A   &kp E   &kp I   &kp U       &kp H    &kp N      &kp T    &kp R   &kp S   &opc RALT 0
             &lsu     &asl    &kp X   &kp Q   &kp K   &kp J       &kp V    &kp B      &kp G    &kp W   &kp Z   &rsm
                                    &lcc LCTRL LCMD &kp SPACE   &kp RET     &kp RET  &kp SPACE  &rcc LCTRL LCMD
                         >;
