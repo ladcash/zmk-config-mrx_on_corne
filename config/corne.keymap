@@ -5,7 +5,7 @@
 
 #define DEFAULT 0
 #define NUMBERS 1
-// #define SYMBOLS 2
+// #define THEORY 2
 
 // ADDS CONTINUE LIST TO CAPS-WORD TURNING IT INTO CAPS-SENTENCE
 &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE BSPC>; };
@@ -43,35 +43,32 @@
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
-            /*  &tes       &qxm     &csc     &dcl                                                         &bsd
-             &SQT   tab_esc   qma_xma  com_sem  dot_col    P      Y          M      L        D      C      F   bac_del
-           opt_csc      O        A        E       I      U          H      N        T      R      S    &opc
-         &lsu  lsft_under  amp_sla    X       Q       K      J          V      B        G      W      Z   rsm_min &rsm
-                            &asl          lcm_cnt  lsp_num  &RET      &RET  rsp_sym  rcm_cnt
-                                            &lcc     &SPACE                 &rsn      &rcc             */
-            // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
-                        bindings = <
-        &tes    &qxm     &csc       &dcl      &kp P     &kp Y       &kp M    &kp L      &kp D     &kp C     &kp F     &bsd
-     &kp SQT    &kp O    &kp A     &kp E      &kp I     &kp U       &kp H    &kp N      &kp T     &kp R     &kp S     &opc RALT 0
-       &lsu     &asl     &kp X     &kp Q      &kp K     &kp J       &kp V    &kp B      &kp G     &kp W     &kp Z     &rsm
-                         &lcc LCTRL LCMD  &kp SPACE   &kp RET       &kp RET  &rsn  &rcc LCTRL LCMD
-                        >;
-                };
-/*                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
 
-                raise_layer {
+        /* tab-esc  qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   alt-capslk
+          lsft-under     O          A          E        I      U        H      N        T      R      S   rshft-minus
+              '      amp-slash      X          Q        K      J        V      B        G      W      Z   bkshft-del
+                                           lcm_cnt  lspc-num  &RET    &RET  rsp_sym  rcm_cnt                        */
+                        bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
+        &tes    &qxm    &csc     &dcl     &kp P     &kp Y       &kp M     &kp L    &kp D    &kp C    &kp F    &opc RALT 0
+        &lsu   &kp O    &kp A    &kp E    &kp I     &kp U       &kp H     &kp N    &kp T    &kp R    &kp S    &rsm
+       &kp SQT  &asl    &kp X    &kp Q    &kp K     &kp J       &kp V     &kp B    &kp G    &kp W    &kp Z    &bsd
+                       &lcc LCTRL LCMD  &kp SPACE  &kp RET     &kp RET    &rsn     &rcc LCTRL LCMD
+                        >;
+                };
+               number_layer {
+         /* glass    &        ,      .       ∨       +         -        ^        =      *       #    trans
+            glass   8-F8    6-F6    4-F4    2-F2    0-F0      1-F1     3-F3     5-F5   7-F7   9-F9   trans
+              |     @-/       [      <       {       (          )       }        >      ]       \    trans
+                                lcm_cnt  lspc-num   &RET      &RET   rsp_sym  rcm_cnt  */
+                        bindings = <
+    &trans   &kp AMPS   &kp COMMA   &kp DOT  &kp CARET   &kp PLUS     &kp MINUS  &kp CARET   &kp EQUAL  &kp STAR  &kp HASH  &trans
+    &trans    &kp O       &kp A      &kp E     &kp I      &kp U         &kp H      &kp N      &kp T       &kp R    &kp S    &trans
+    &trans    &asl        &kp X      &kp Q     &kp K      &kp J         &kp V      &kp B      &kp G       &kp W    &kp Z    &trans
+                                    &trans    &trans      &trans       &trans      &trans     &trans
+                        >;
+                };
+/*
+                theory_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
