@@ -38,7 +38,6 @@
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
                 rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
              // lss: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to SYMBOLS>, <&kp SPACE>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
-//         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -61,8 +60,9 @@
               |     @-/       [      <       {       (          )       }        >      ]       \    trans
                                 lcm_cnt  lspc-num   &RET      &RET   rsp_sym  rcm_cnt  */
                         bindings = <
+//         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
     &trans      &kp AMPS   &kp COMMA   &kp DOT   &kp CARET  &kp PLUS     &kp MINUS  &kp CARET   &kp EQUAL   &kp STAR   &kp HASH  &trans
-    &trans      &kp N8     &N6         &kp N4    &kp N2     &kp N0       &kp N1     &kp N3      &kp N5      &kp N7     &kp N9    &trans
+    &trans      &kp N8     &kp N6         &kp N4    &kp N2     &kp N0       &kp N1     &kp N3      &kp N5      &kp N7     &kp N9    &trans
     &kp PIPE2   &kp AT   &kp LBKT    &kp LT    &kp LBRC   &kp LPAR     &kp RPAR   &kp RBRC    &kp GT      &kp RBKT   &kp BSLH    &trans
                                         &trans   &trans     &trans       &trans     &trans      &trans
                         >;
