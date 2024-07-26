@@ -52,7 +52,7 @@
         &tes    &qxm    &csc     &dcl     &kp P     &kp Y       &kp M     &kp L    &kp D    &kp C    &kp F    &opc RALT 0
         &lsu   &kp O    &kp A    &kp E    &kp I     &kp U       &kp H     &kp N    &kp T    &kp R    &kp S    &rsm
        &kp SQT  &asl    &kp X    &kp Q    &kp K     &kp J       &kp V     &kp B    &kp G    &kp W    &kp Z    &bsd
-                       &lcc LCTRL LCMD  &kp SPACE  &kp RET     &kp RET    &SPACE     &rcc LCTRL LCMD
+                       &lcc LCTRL LCMD  &kp SPACE  &kp RET     &kp RET    &kp SPACE     &rcc LCTRL LCMD
                         >;
                 };
                number_layer {
