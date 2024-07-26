@@ -36,7 +36,7 @@
                 rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <375>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
-                rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
+             // rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to NUMBERS>, <&kp SPACE>; };
              // lss: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; bindings = <&to SYMBOLS>, <&kp SPACE>; };
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
         };
