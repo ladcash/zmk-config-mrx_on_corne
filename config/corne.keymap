@@ -36,8 +36,8 @@
                 rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <500>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
-                rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
-             // lss: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to SYMBOLS>, <&kp SPACE>; tapping-term-ms = <150>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
+                rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
+                lsn: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -51,7 +51,7 @@
         &tes    &qxm    &csc     &dcl     &kp P     &kp Y       &kp M     &kp L    &kp D    &kp C    &kp F    &opc RALT 0
         &lsu   &kp O    &kp A    &kp E    &kp I     &kp U       &kp H     &kp N    &kp T    &kp R    &kp S    &rsm
        &kp SQT  &asl    &kp X    &kp Q    &kp K     &kp J       &kp V     &kp B    &kp G    &kp W    &kp Z    &bsd
-                       &lcc LCTRL LCMD  &kp SPACE  &kp RET     &kp RET    &rsn NUMBERS SPACE     &rcc LCTRL LCMD
+               &lcc LCTRL LCMD  &lsn NUMBERS SPACE  &kp RET     &kp RET    &rsn NUMBERS SPACE     &rcc LCTRL RCMD
                         >;
                 };
                number_layer {
