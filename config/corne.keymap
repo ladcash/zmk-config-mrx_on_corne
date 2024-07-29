@@ -22,7 +22,7 @@
                 lsu: lsft_under { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LSFT>, <&kp UNDER>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-
+//         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
         //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS
         //  mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
             //    cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
@@ -37,38 +37,38 @@
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS
                 rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
-            //    lst: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
+            //    lst: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lst THEORY SPACE in keymap'
             //    light LEDs to indicate number layer active
 
         //  BEHAVIORS FOR UNICODE LOGIC, SET & NUMBER THEORY CHARACTERS
             //
         };
-        keymap {
+        keymap
                 compatible = "zmk,keymap";
                 default_layer {
 
-        /* tab-esc  qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   alt-capslk
+        /*   '/"    qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
           lsft-under     O          A          E        I      U        H      N        T      R      S   rshft-minus
-              '      amp-slash      X          Q        K      J        V      B        G      W      Z   bkshft-del
+           tab-esc   amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
                                            lcm_cnt  lspc-num  &RET    &RET  rsp_sym  rcm_cnt                        */
                         bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
-        &tes    &qxm    &csc     &dcl     &kp P     &kp Y       &kp M     &kp L    &kp D    &kp C    &kp F    &opc RALT 0
-        &lsu   &kp O    &kp A    &kp E    &kp I     &kp U       &kp H     &kp N    &kp T    &kp R    &kp S    &rsm
-       &kp SQT  &asl    &kp X    &kp Q    &kp K     &kp J       &kp V     &kp B    &kp G    &kp W    &kp Z    &bsd
-               &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET     &kp RET    &rsn NUMBERS SPACE     &rcc LCTRL RCMD
+      &kp SQT  &qxm    &csc     &dcl     &kp P     &kp Y      &kp M     &kp L    &kp D    &kp C    &kp F    &opc RALT 0
+      &lsu     &kp O   &kp A    &kp E    &kp I     &kp U      &kp H     &kp N    &kp T    &kp R    &kp S    &rsm
+      &tes     &asl    &kp X    &kp Q    &kp K     &kp J      &kp V     &kp B    &kp G    &kp W    &kp Z    &bsd
+            &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET      &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
                         >;
                 };
                number_layer {
-         /* glass    &        ,      .       ∨       +         -        ^        =      *       #    trans
-            glass   8-F8    6-F6    4-F4    2-F2    0-F0      1-F1     3-F3     5-F5   7-F7   9-F9   trans
-              |     @-/       [      <       {       (          )       }        >      ]       \    trans
-                                lcm_cnt  lspc-num   &RET      &RET   rsp_sym  rcm_cnt  */
+/*           |      &none   ,/;    :/.     ^      +         -       *        =   &none     #    opt-caps
+        lsft-under  8-F8   6-F6   4-F4   2-F2   0-F0      1-F1    3-F3     5-F5   7-F7   9-F9   rshft-minus
+         tab-esc    @-/     [       <      {      (         )       }        >      ]      \    bshft-del
+                              lcm_cnt  lspc-num  &RET      &RET  rsp_sym  rcm_cnt                       */
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-    &trans      &kp AMPS   &kp COMMA   &kp DOT   &kp CARET  &kp PLUS     &kp MINUS  &kp CARET   &kp EQUAL   &kp STAR   &kp HASH  &trans
-    &trans      &kp N8     &kp N6         &kp N4    &kp N2     &kp N0       &kp N1     &kp N3      &kp N5      &kp N7     &kp N9    &trans
-    &kp PIPE2   &kp AT   &kp LBKT    &kp LT    &kp LBRC   &kp LPAR     &kp RPAR   &kp RBRC    &kp GT      &kp RBKT   &kp BSLH    &trans
-                                        &trans   &trans     &trans       &trans     &trans      &trans
+    &kp PIPE   &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS     &kp MINUS  &kp STAR  &kp EQUAL  &none    &kp AT    &trans
+      &trans   &kp N8    &kp N6   &kp N4   &kp N2     &kp N0       &kp N1     &kp N3     &kp N5    &kp N7   &kp N9    &trans
+      &trans   &trans    &none    &none    &kp LBRC   &kp LPAR     &kp RPAR   &kp RBRC   &none     &none    &kp HASH  &trans
+                         &trans   &trans   &trans     &trans       &trans     &trans
                         >;
                 };
 /*
