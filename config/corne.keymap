@@ -40,7 +40,7 @@
 
         //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-                hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }
+                hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrp: lperan_rperan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp RPAR>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrc: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp GT>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
