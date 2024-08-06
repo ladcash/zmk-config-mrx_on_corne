@@ -39,13 +39,14 @@
             //    light LEDs to indicate number layer active
 
         //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS
-            //  pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }
-            //  afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; }
+                afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrp: lperan_rperan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp RPAR>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrc: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp GT>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+            //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
         //  SHIFT NUMBER KEYS FOR F-KEYS
             //  onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  tof: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N2>, <&kp F2>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -83,12 +84,13 @@
         lsft-under  8-F8   6-F6   4-F4   2-F2   0-F0      1-F1    3-F3     5-F5   7-F7   9-F9   rshft-minus
              |      @-/     [       <      {      (         )       }        >      ]      \    bshft-del
                               lcm_cnt  lspc-num  &RET      &RET  rsp_sym  rcm_cnt                       */
+            //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-    &kp PIPE   &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS     &kp MINUS  &kp STAR  &kp EQUAL  &none    &kp AT    &trans
-      &trans   &kp N8    &kp N6   &kp N4   &kp N2     &kp N0       &kp N1     &kp N3     &kp N5    &kp N7   &kp N9    &trans
-      &trans   &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR   &kp LBRC   &none     &none    &kp HASH  &trans
-                         &trans   &trans   &trans     &trans       &trans     &trans
+      &trans  &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS    &kp MINUS  &kp STAR   &kp EQUAL  &none    &afs    &trans
+      &trans  &kp N8    &kp N6   &kp N4   &kp N2     &kp N0      &kp N1     &kp N3     &kp N5     &kp N7   &kp N9  &trans
+        &pit  &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR    &kp LBRC   &none      &none    &hbs    &trans
+                                 &trans   &trans     &trans     &trans      &trans     &trans
                         >;
                 };
 /*
