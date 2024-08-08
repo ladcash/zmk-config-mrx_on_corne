@@ -42,10 +42,10 @@
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  lrp: lperan_rperan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp RPAR>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  lrc: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp GT>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                lrp: lperan_rperan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp RPAR>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                lrc: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp GT>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
             //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
         //  SHIFT NUMBER KEYS FOR F-KEYS
             //  onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -73,9 +73,9 @@
            lsft-under   amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
                                            lcm_cnt  lspc-num  &RET    &RET  rsp_sym  rcm_cnt                        */
                         bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
-          &tes   &qxm    &csc   &dcl    &kp P    &kp Y       &kp M    &kp L    &kp D    &kp C    &kp F    &bsd
-       &kp SQT   &kp O  &kp A   &kp E   &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &opc RALT 0
-          &lsu   &asl   &kp X   &kp Q   &kp K    &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &rsm
+            &tes  &qxm    &csc   &dcl    &kp P    &kp Y       &kp M    &kp L    &kp D    &kp C    &kp F    &bsd
+            &lsu  &kp O  &kp A   &kp E   &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
+         &kp SQT  &asl   &kp X   &kp Q   &kp K    &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &opc RALT 0
            &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET     &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
                         >;
                 };
@@ -88,8 +88,8 @@
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
       &trans  &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS    &kp MINUS  &kp STAR   &kp EQUAL  &none    &afs    &trans
-      &trans  &kp N8    &kp N6   &kp N4   &kp N2     &kp N0      &kp N1     &kp N3     &kp N5     &kp N7   &kp N9  &trans
-        &pit  &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR    &kp LBRC   &none      &none    &hbs    &trans
+      &pit    &kp N8    &kp N6   &kp N4   &kp N2     &kp N0      &kp N1     &kp N3     &kp N5     &kp N7   &kp N9  &trans
+      &trans  &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR    &kp LBRC   &none      &none    &hbs    &trans
                                  &trans   &trans     &trans     &trans      &trans     &trans
                         >;
                 };
