@@ -66,30 +66,32 @@
         };
         keymap {
                 compatible = "zmk,keymap";
-                default_layer {
 
-        /*   tab-esc  qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
+                default_layer {
+        /*   tab-esc   qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
                  ' "        O          A          E        I      U        H      N        T      R      S   rshft-minus
-           lsft-under   amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
-                                           lcm_cnt  lspc-num  &RET    &RET  rsp_sym  rcm_cnt                        */
+          lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del  */
+                        //  lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt
+
                         bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
-     &kp SQT   &qxm    &csc    &dcl    &kp P    &kp Y       &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
-        &lsu   &kp O   &kp A   &kp E   &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
-        &tes   &asl    &kp X   &kp Q   &kp K    &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &bsd
-         &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET      &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+        &kp SQT   &qxm    &csc     &dcl     &kp P     &kp Y        &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
+        &lsu      &kp O    &kp A     &kp E    &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
+        &tes      &asl    &kp X     &kp Q    &kp K     &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &bsd
+                &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
                         >;
                 };
+
                number_layer {
-/*        tab-esc   &none   ,/;    :/.     ^      +         -       *        =   &none     #    opt-caps
-        lsft-under  8-F8   6-F6   4-F4   2-F2   0-F0      1-F1    3-F3     5-F5   7-F7   9-F9   rshft-minus
-             |      @-/     [       <      {      (         )       }        >      ]      \    bshft-del
-                              lcm_cnt  lspc-num  &RET      &RET  rsp_sym  rcm_cnt                       */
+/*             | ~       $      , ;       : .         ^      +        -       *        =      &none    @ /     opt-caps
+        lsft-under    8-F8     6-F6      4-F4      2-F2   0-F0        1-F1    3-F3     5-F5   7-F7     9-F9    rshft-minus
+           tab-esc    & /     &none     &none       [ ]    < >        ( )     { }      &none  &none    #-\     bshft-del
+                                      lcm_cnt  lspc-num   &RET        &RET    rsp_sym  rcm_cnt                       */
             //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-      &trans  &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS    &kp MINUS  &kp STAR   &kp EQUAL  &none    &afs    &trans
-      &pit    &kp N8    &kp N6   &kp N4   &kp N2     &kp N0      &kp N1     &kp N3     &kp N5     &kp N7   &kp N9  &trans
-      &trans  &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR    &kp LBRC   &none      &none    &hbs    &trans
+         &pit  &kp DLLR  &trans   &trans   &kp CARET  &kp PLUS    &kp MINUS  &kp STAR   &kp EQUAL  &none    &afs    &trans
+       &trans  &kp N8    &kp N6   &kp N4   &kp N2     &kp N0      &kp N1     &kp N3     &kp N5     &kp N7   &kp N9  &trans
+       &trans  &trans    &none    &none    &kp LBKT   &kp LT     &kp LPAR    &kp LBRC   &none      &none    &hbs    &trans
                                  &trans   &trans     &trans     &trans      &trans     &trans
                         >;
                 };
