@@ -53,13 +53,13 @@
               thf: three_fthree { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N3>, <&kp F3>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               fof: four_ffour { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N4>, <&kp F4>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               fif: five_ffive { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N5>, <&kp F5>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-              sif: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N6>, <&kp F6>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-              sef: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N7>, <&kp F7>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              sif: two_fsix { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N6>, <&kp F6>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              sef: two_fseven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N7>, <&kp F7>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               eif: eight_feight { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N8>, <&kp F8>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               nif: nine_fnine { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N9>, <&kp F9>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               zef: zero_ften { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N0>, <&kp F10>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               elf: minus_feleven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp MINUS>, <&kp F11>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-              twf: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              twf: two_ftwelve { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
         //  BEHAVIORS FOR UNICODE LOGIC, SET & NUMBER THEORY CHARACTERS
             //
