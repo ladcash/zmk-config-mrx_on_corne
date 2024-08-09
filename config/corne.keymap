@@ -38,7 +38,7 @@
             //    lst: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lst THEORY SPACE in keymap'
             //    light LEDs to indicate number layer active
 
-        //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS
+        //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -46,20 +46,20 @@
                 lrc: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LT>,<&kp GT> ; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
+
         //  SHIFT NUMBER KEYS FOR F-KEYS
-            //  onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  tof: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N2>, <&kp F2>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  thf: three_fthree { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N3>, <&kp F3>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  fof: four_ffour { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N4>, <&kp F4>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  fif: five_ffive { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N5>, <&kp F5>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  sif: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N6>, <&kp F6>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  sef: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N7>, <&kp F7>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  eif: eight_feight { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N8>, <&kp F8>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  nif: nine_fnine { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N9>, <&kp F9>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  zef: zero_ften { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N0>, <&kp F10>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  elf: minus_feleven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp MINUS>, <&kp F11>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-            //  twf: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              tof: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N2>, <&kp F2>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              thf: three_fthree { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N3>, <&kp F3>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              fof: four_ffour { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N4>, <&kp F4>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              fif: five_ffive { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N5>, <&kp F5>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              sif: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N6>, <&kp F6>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              sef: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N7>, <&kp F7>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              eif: eight_feight { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N8>, <&kp F8>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              nif: nine_fnine { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N9>, <&kp F9>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              zef: zero_ften { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N0>, <&kp F10>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              elf: minus_feleven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp MINUS>, <&kp F11>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+              twf: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
         //  BEHAVIORS FOR UNICODE LOGIC, SET & NUMBER THEORY CHARACTERS
             //
@@ -89,9 +89,9 @@
             //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-         &pit  &kp DLLR  &trans   &trans  &kp CARET  &kp PLUS      &kp MINUS   &kp STAR   &kp EQUAL  &none    &afs    &trans
+         &pit  &kp DLLR  &trans   &trans  &kp CARET  &kp PLUS      &kp MINUS   &kp STAR   &kp EQUAL  &none    &hbs    &trans
        &trans  &kp N8    &kp N6   &kp N4     &kp N2    &kp N0      &kp N1      &kp N3     &kp N5     &kp N7   &kp N9  &trans
-       &trans  &trans    &none    &none        &lrk      &lrc      &lrp        &lrb       &none      &none    &hbs    &trans
+       &trans  &trans    &none    &none        &lrk      &lrc      &lrp        &lrb       &none      &none    &afs    &trans
                                   &trans     &trans     &trans     &trans      &trans     &trans
                         >;
                 };
