@@ -73,10 +73,10 @@
            lsft-under   amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
                                            lcm_cnt  lspc-num  &RET    &RET  rsp_sym  rcm_cnt                        */
                         bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
-            &tes  &qxm    &csc   &dcl    &kp P    &kp Y       &kp M    &kp L    &kp D    &kp C    &kp F    &bsd
-            &lsu  &kp O  &kp A   &kp E   &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
-         &kp SQT  &asl   &kp X   &kp Q   &kp K    &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &opc RALT 0
-           &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET     &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+     &kp SQT   &qxm    &csc    &dcl    &kp P    &kp Y       &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
+        &lsu   &kp O   &kp A   &kp E   &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
+        &tes   &asl    &kp X   &kp Q   &kp K    &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &bsd
+         &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET      &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
                         >;
                 };
                number_layer {
