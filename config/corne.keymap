@@ -5,7 +5,7 @@
         #include <dt-bindings/zmk/rgb.h>
 
         #define MRXS 0
-#       #define QWERTY  1
+        #define QWERTY  1
         #define NUMBERS 2
         // #define THEORY 3
 
@@ -70,8 +70,8 @@
                 mrxs_layer {
         /*   tab-esc   qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
                  ' "        O          A          E        I      U        H      N        T      R      S   rshft-minus
-          lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del  */
-                        //  lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt
+          lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
+                           lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
 
                         bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
         &kp SQT   &qxm    &csc     &dcl     &kp P     &kp Y        &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
