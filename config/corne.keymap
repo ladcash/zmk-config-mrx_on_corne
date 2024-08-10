@@ -24,7 +24,7 @@
                 rsm: rsft_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RSFT>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-        //  LALT KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS: mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
+        //  OPTION KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS: mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
             //    cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
             //    caps_word { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc RALT 0' in keymap
@@ -35,8 +35,10 @@
                 rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <500>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBERS layer, with 2nd hold returning to default layer
-                rsn: rspace_tonumbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
-                lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE in keymap'
+            //    rsn: rspace_tonumbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE' in keymap
+                ntn: nto_numbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS N' in keymap
+            //    lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE' in keymap
+                qtq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtq QWERTY Q' in keymap
 
         //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -61,6 +63,7 @@
               elf: minus_feleven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp MINUS>, <&kp F11>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               twf: two_ftwelve { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
+
         //  BEHAVIORS FOR UNICODE LOGIC, SET & NUMBER THEORY CHARACTERS
             //
         };
@@ -74,10 +77,10 @@
                            lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
 
                         bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
-        &kp SQT   &qxm    &csc     &dcl     &kp P     &kp Y        &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O    &kp A     &kp E    &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
-        &tes      &asl    &kp X     &kp Q    &kp K     &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &bsd
-                 &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+        &kp SQT   &qxm    &csc       &dcl        &kp P    &kp Y      &kp M      &kp L       &kp D    &kp C    &kp F    &opc RALT 0
+        &lsu      &kp O   &kp A     &kp E        &kp I    &kp U      &kp H  &rsn NUMBERS N  &kp T    &kp R    &kp S    &rsm
+        &tes      &asl    &kp X  &qtq QWERTY Q   &kp K    &kp J      &kp V      &kp B       &kp G    &kp W    &kp Z    &bsd
+                    &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET      &kp RET  &ntn NUMBERS N  &rcc LCTRL RCMD
                         >;
                 };
 
