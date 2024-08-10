@@ -4,9 +4,10 @@
         #include <dt-bindings/zmk/keys.h>
         #include <dt-bindings/zmk/rgb.h>
 
-        #define DEFAULT 0
-        #define NUMBERS 1
-        // #define THEORY 2
+        #define MRXS 0
+#       #define QWERTY  1
+        #define NUMBERS 2
+        // #define THEORY 3
 
         // ADDS CONTINUE LIST TO CAPS-WORD TURNING IT INTO CAPS-SENTENCE
         &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE BSPC>; }; // <RETURN> cancels caps word
@@ -34,9 +35,8 @@
                 rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <500>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBERS layer, with 2nd hold returning to default layer
-                rsn: rspace_tonum { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
-            //    lst: lspace_tosym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lst THEORY SPACE in keymap'
-            //    light LEDs to indicate number layer active
+                rsn: rspace_tonumbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE in keymap'
+                lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE in keymap'
 
         //  NUMBERS LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -67,17 +67,31 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                mrxs_layer {
         /*   tab-esc   qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
                  ' "        O          A          E        I      U        H      N        T      R      S   rshft-minus
           lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del  */
                         //  lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt
 
-                        bindings = <  // tes qxm csc dcl bsd opc lsu asl rsm lcc rcc
+                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
         &kp SQT   &qxm    &csc     &dcl     &kp P     &kp Y        &kp M    &kp L    &kp D    &kp C    &kp F    &opc RALT 0
         &lsu      &kp O    &kp A     &kp E    &kp I    &kp U       &kp H    &kp N    &kp T    &kp R    &kp S    &rsm
         &tes      &asl    &kp X     &kp Q    &kp K     &kp J       &kp V    &kp B    &kp G    &kp W    &kp Z    &bsd
-                &lcc LCTRL LCMD  &rsn NUMBERS SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+                 &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+                        >;
+                };
+
+                qwerty_layer {
+            /*   tab-esc   qmark-xmark  cma-semi   dot-col     P      Y        M      L        D      C      F   opt-caps
+                     ' "        O          A          E        I      U        H      N        T      R      S   rshft-minus
+              lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
+                                        lcm_cnt  lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
+
+                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
+        &asl    &kp Q    &kp W     &kp E    &kp R    &kp T       &kp Y    &kp U    &kp I   &kp O    &kp P     &opc RALT 0
+        &lsu    &kp A    &kp S     &kp D    &kp F    &kp G       &kp H    &kp J    &kp K   &kp L    &kp SQT   &rsm
+        &tes    &kp Z    &kp X     &kp C    &kp V    &kp B       &kp N    &kp M    &csc    &dcl     &qxm      &bsd
+               &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
                         >;
                 };
 
