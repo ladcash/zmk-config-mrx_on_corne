@@ -36,7 +36,7 @@
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBERS layer, with 2nd hold returning to default layer
             //    rsn: rspace_tonumbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS SPACE' in keymap
-                ntn: nto_numbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBERS N' in keymap
+                ntn: nto_numbers { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntn NUMBERS N' in keymap
             //    lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE' in keymap
                 qtq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtq QWERTY Q' in keymap
 
@@ -76,11 +76,11 @@
           lsft-under    amp-slash      X          Q        K      J        V      B        G      W      Z   bshft-del
                            lcm_cnt    lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
+                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc
         &kp SQT   &qxm    &csc       &dcl        &kp P    &kp Y      &kp M      &kp L       &kp D    &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O   &kp A     &kp E        &kp I    &kp U      &kp H  &rsn NUMBERS N  &kp T    &kp R    &kp S    &rsm
+        &lsu      &kp O   &kp A     &kp E        &kp I    &kp U      &kp H  &ntn NUMBERS N  &kp T    &kp R    &kp S    &rsm
         &tes      &asl    &kp X  &qtq QWERTY Q   &kp K    &kp J      &kp V      &kp B       &kp G    &kp W    &kp Z    &bsd
-                    &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET      &kp RET  &ntn NUMBERS N  &rcc LCTRL RCMD
+                            &lcc LCTRL LCMD   &kp SPACE  &kp RET    &kp RET   &kp SPACE   &rcc LCTRL RCMD
                         >;
                 };
 
@@ -91,10 +91,10 @@
                                         lcm_cnt  lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
 
                         bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
-        &asl    &kp Q    &kp W     &kp E    &kp R    &kp T       &kp Y    &kp U    &kp I   &kp O    &kp P     &opc RALT 0
-        &lsu    &kp A    &kp S     &kp D    &kp F    &kp G       &kp H    &kp J    &kp K   &kp L    &kp SQT   &rsm
-        &tes    &kp Z    &kp X     &kp C    &kp V    &kp B       &kp N    &kp M    &csc    &dcl     &qxm      &bsd
-               &lcc LCTRL LCMD  &lsq QWERTY SPACE  &kp RET       &kp RET  &rsn NUMBERS SPACE  &rcc LCTRL RCMD
+        &asl      &kp Q    &kp W     &kp E    &kp R    &kp T       &kp Y    &kp U    &kp I   &kp O    &kp P     &trans
+        &trans    &kp A    &kp S     &kp D    &kp F    &kp G       &kp H    &kp J    &kp K   &kp L    &kp SQT   &trans
+        &trans    &kp Z    &kp X     &kp C    &kp V    &kp B       &kp N    &kp M    &csc    &dcl     &qxm      &trans
+                                    &trans   &trans   &trans       &trans   &trans   &trans
                         >;
                 };
 
