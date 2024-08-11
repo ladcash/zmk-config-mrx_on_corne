@@ -38,6 +38,7 @@
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBER layer, with 2nd hold returning to default layer
             //    rsn: rspace_tonumber { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBER SPACE' in keymap
                 ntn: nto_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntn NUMBER N' in keymap
+                rtm: rtnto_mrxs { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rtm MRXS N' in keymap
             //    lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE' in keymap
                 qtq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtq QWERTY Q' in keymap
 
@@ -107,7 +108,7 @@
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
          &pit  &kp DLLR  &trans   &trans  &kp CARET  &kp PLUS      &kp MINUS   &kp STAR    &kp EQUAL  &none    &hbs    &trans
-       &trans  &kp N8    &kp N6   &kp N4     &kp N2    &kp N0      &kp N1    &ntn MRXS N3  &kp N5     &kp N7   &kp N9  &trans
+       &trans  &kp N8    &kp N6   &kp N4     &kp N2    &kp N0      &kp N1    &rtm MRXS N3  &kp N5     &kp N7   &kp N9  &trans
        &trans  &trans    &none    &none        &lrk      &lrc      &lrp        &lrb        &none      &none    &afs    &trans
                                   &trans     &trans     &trans     &trans      &trans      &trans
                         >;
