@@ -37,10 +37,15 @@
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBER layer, with 2nd hold returning to default layer
             //    rsn: rspace_tonumber { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBER SPACE' in keymap
-                ntn: nto_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntn NUMBER N' in keymap
-                rtm: rtnto_mrxs { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rtm MRXS N3' in keymap
             //    lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE' in keymap
-                qtq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtq QWERTY Q' in keymap
+                mtn: mrx_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtn NUMBER N' in keymap
+                ntm: num_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS N3' in keymap
+
+                qtn: que_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtn NUMBER N' in keymap
+                ntq: num_to_que { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntq QWERTY LBRC' in keymap
+
+                mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY Q' in keymap
+                qtm: que_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtm MRXS N3' in keymap
 
         //  NUMBER LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -79,8 +84,8 @@
 
                         bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc
         &kp SQT   &qxm    &csc       &dcl        &kp P    &kp Y      &kp M      &kp L       &kp D    &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O   &kp A     &kp E        &kp I    &kp U      &kp H  &ntn NUMBER N  &kp T    &kp R    &kp S    &rsm
-        &tes      &asl    &kp X  &qtq QWERTY Q   &kp K    &kp J      &kp V      &kp B       &kp G    &kp W    &kp Z    &bsd
+        &lsu      &kp O   &kp A     &kp E        &kp I    &kp U      &kp H  &mtn NUMBER N  &kp T    &kp R    &kp S    &rsm
+        &tes      &asl    &kp X  &mtq QWERTY Q   &kp K    &kp J      &kp V      &kp B       &kp G    &kp W    &kp Z    &bsd
                             &lcc LCTRL LCMD   &kp SPACE  &kp RET    &kp RET   &kp SPACE   &rcc LCTRL RCMD
                         >;
                 };
@@ -92,7 +97,7 @@
                                         lcm_cnt  lspc-num   &RET     &RET  rsp_sym  rcm_cnt   */
 
                         bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
-        &asl   &qtq MRXS Q   &kp W    &kp E    &kp R    &kp T      &kp Y           &kp U    &kp I   &kp O    &kp P     &trans
+        &asl   &qtm MRXS Q   &kp W    &kp E    &kp R    &kp T      &kp Y           &kp U    &kp I   &kp O    &kp P     &trans
         &trans   &kp A       &kp S    &kp D    &kp F    &kp G      &kp H           &kp J    &kp K   &kp L    &kp SQT   &trans
         &trans   &kp Z       &kp X    &kp C    &kp V    &kp B      &ntn NUMBER N   &kp M    &csc    &dcl     &qxm      &trans
                                      &trans   &trans   &trans      &trans          &trans   &trans
@@ -107,10 +112,10 @@
             //  pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                         bindings = <
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
-         &pit  &kp DLLR  &trans   &trans  &kp CARET  &kp PLUS      &kp MINUS   &kp STAR    &kp EQUAL  &none    &hbs    &trans
-       &trans  &kp N8    &kp N6   &kp N4     &kp N2    &kp N0      &kp N1    &rtm MRXS N3  &kp N5     &kp N7   &kp N9  &trans
-       &trans  &trans    &none    &none        &lrk      &lrc      &lrp        &lrb        &none      &none    &afs    &trans
-                                  &trans     &trans     &trans     &trans      &trans      &trans
+         &pit  &kp DLLR  &trans   &trans  &kp CARET  &kp PLUS      &kp MINUS   &kp STAR        &kp EQUAL  &none    &hbs    &trans
+       &trans  &kp N8    &kp N6   &kp N4     &kp N2    &kp N0      &kp N1    &ntm MRXS N3      &kp N5     &kp N7   &kp N9  &trans
+       &trans  &trans    &none    &none        &lrk      &lrc      &lrp     &ntq QWERTY LBRC   &none      &none    &afs    &trans
+                                  &trans     &trans     &trans     &trans      &trans          &trans
                         >;
                 };
 /*
