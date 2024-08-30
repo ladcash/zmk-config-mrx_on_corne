@@ -26,24 +26,21 @@
                 asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
         //  OPTION KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS: mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
-            //    cps:  caps_sentence { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
-            //    caps_word { compatible = "zmk,behavior-caps-word"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; }; //continue_list = <SPACE>;
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; flavor = "hold-preferred"; tapping-term-ms = <250>; }; // '&opc RALT 0' in keymap
 
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS: mods CMND keys to: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
-                lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <2000>; quick-release; /delete-property/ignore-modifiers;} ;
-                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <500>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
-                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <500>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
+                lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <4000>; quick-release; /delete-property/ignore-modifiers;} ;
+                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
+                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  SPACE KEY 'TO LAYERS' HOLD-TAP BEHAVIORS: tap -> SPACE & hold-> NUMBER layer, with 2nd hold returning to default layer
-            //    rsn: rspace_tonumber { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rsn NUMBER SPACE' in keymap
-            //    lsq: lspace_toqwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lsq QWERTY SPACE' in keymap
-                mtn: mrx_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtn NUMBER N' in keymap
-                ntm: num_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS N3' in keymap
-
+                // MR X's LAYER TO NUMBERS LAYER & BACK AGAIN
+                mtn: mrx_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtn NUMBER N' in keymap
+                ntm: num_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS N3' in keymap
+                // QWERTY LAYER TO NUMBERS LAYER & BACK AGAIN
                 qtn: que_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtn NUMBER N' in keymap
                 ntq: num_to_que { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntq QWERTY LBRC' in keymap
-
+                // MR X's LAYER TO QWERTY LAYER & BACK AGAIN
                 mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&tog>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY Q' in keymap
                 qtm: que_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtm MRXS N3' in keymap
 
