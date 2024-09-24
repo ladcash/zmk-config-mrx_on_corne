@@ -26,25 +26,25 @@
                 asl: amps_slash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AMPS>, <&kp SLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 //         1         2         3         4         5         6         7         8         9         0         1         2         3         4         56         7         8         9
         //  OPTION KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS: mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
-                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; tapping-term-ms = <250>; flavor = "hold-preferred"; }; // '&opc RALT 0' in keymap
+                opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; tapping-term-ms = <200>; flavor = "hold-preferred"; }; // '&opc RALT 0' in keymap
 
         //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS: mods CMND keys to: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
                 lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <4000>; quick-release; /delete-property/ignore-modifiers;} ;
-                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
-                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
+                lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
+                rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; };
 
         //  RETURN KEYS 'TO LAYERS' HOLD-TAP BEHAVIORS: mods SPACE keys to: hold-to layer, tap->RET or RET2, 2nd tap returns to starting layer
                 // MR X's LAYER TO numsym LAYER & BACK AGAIN
-                mtn: mrx_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred";};  // '&mtn NUMSYM RET' in mrx keymap
-                ntm: numsym_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS RET' in numsym keymap
+                mtn: mrx_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred";};  // '&mtn NUMSYM RET' in mrx keymap
+                ntm: numsym_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS RET' in numsym keymap
 
                 // MR X's LAYER TO QWERTY LAYER & BACK AGAIN
-                mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
-                qtm: qwerty_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtm MRXS RET' in qwerty keymap
+                mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
+                qtm: qwerty_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtm MRXS RET' in qwerty keymap
 
                 // QWERTY LAYER TO NUMSYM LAYER & BACK AGAIN
-                qtn: querty_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtn NUMSYM RET' in qwerty keymap
-                ntq: numsym_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <250>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntq QWERTY RET' in numsym keymap
+                qtn: querty_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtn NUMSYM RET' in qwerty keymap
+                ntq: numsym_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntq QWERTY RET' in numsym keymap
 
         //  NUMSYM LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -104,13 +104,13 @@
                 };
 
                numsym_layer {
-/*             | ~       $      , ;       : .         ^      +        -       *        =      &none    @ /     opt-caps
+/*             | ~       $      , ;       : .         ^      +        -       *        =      ~    @ /     opt-caps
         lsft-under    8-F8     6-F6      4-F4      2-F2   0-F0        1-F1    3-F3     5-F5   7-F7     9-F9    rshft-minus
            tab-esc    & /     &none     &none       [ ]    < >        ( )     { }      &none  &none    #-\     bshft-del
                                       lcm_cnt  lspc-num   qwerty/RET        mrxs/RET    rsp_sym  rcm_cnt                       */
 
                         bindings = <
-         &pit  &kp DLLR  &trans   &trans  &kp CARET          &kp PLUS      &kp MINUS      &kp STAR          &kp EQUAL  &none    &hbs    &trans
+         &pit  &kp DLLR  &trans   &trans  &kp CARET          &kp PLUS      &kp MINUS      &kp STAR          &kp EQUAL  &TILDE    &hbs    &trans
        &trans    &kp N8  &kp N6   &kp N4     &kp N2            &kp N0      &kp N1         &ntm MRXS N3      &kp N5     &kp N7   &kp N9  &trans
        &trans    &trans  &none    &none       &lrk              &lrc       &lrp           &ntq QWERTY LPAR  &none      &none    &afs    &trans
                                   &trans     &trans   &ntq QWERTY RET      &ntm MRXS RET  &trans            &trans
