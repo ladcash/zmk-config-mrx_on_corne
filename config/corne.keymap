@@ -35,8 +35,8 @@
 
         //  RETURN KEYS 'TO LAYERS' HOLD-TAP BEHAVIORS: mods SPACE keys to: hold-to layer, tap->RET or RET2, 2nd tap returns to starting layer
                 // MR X's LAYER TO numsym LAYER & BACK AGAIN
-                mtn: mrx_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred";};  // '&mtn NUMSYM RET' in mrx keymap
-                ntm: numsym_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntm MRXS RET' in numsym keymap
+                mtn: mrx_to_numsym { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "hold-preferred";};  // '&mtn NUMSYM RET' in mrx keymap
+                ntm: numsym_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "hold-preferred"; }; // '&ntm MRXS RET' in numsym keymap
 
                 // MR X's LAYER TO QWERTY LAYER & BACK AGAIN
                 mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
