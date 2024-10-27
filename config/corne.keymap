@@ -34,7 +34,7 @@
         // ctrl not freq used on mac - rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rcc LCTRL LCMD' in keymap
 
         //  FROM "HERE TO THERE" (ANY LAYER) & BACK AGAIN: hold tap of modifier key with format - &hta MODIFIER LAYER
-        h2t: here_to_there { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
+        tnb: ther_nback { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
 
     //  TO LAYERS 'HOLD-TAP' BEHAVIORS: mods SPACE keys to: hold-to layer, tap->RET or RET2, 2nd tap returns to starting layer
         // MR X's LAYER TO numsym LAYER & BACK AGAIN
@@ -88,7 +88,7 @@
         &tes       &qxm       &csc       &dcl        &kp P     &kp Y          &kp M      &kp L       &kp D     &kp C    &kp F    &opc RALT 0
         &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &kp T     &kp R    &kp S    &rsm
      &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J          &kp V      &kp B       &kp G     &kp W    &kp Z    &bsd
-                             &h2t LCMD QWERTY    &kp SPACE       RET          RET        &kp SPACE   &h2t RCMD NUMSYM
+                             &tnb LCMD QWERTY    &kp SPACE       RET          RET        &kp SPACE   &tnb RCMD NUMSYM
     >;
                 };
 
@@ -102,7 +102,7 @@
         &trans    &kp Q     &kp W     &kp E    &kp R     &kp T     &kp Y          &kp U     &kp I     &kp O     &kp P     &trans
         &trans    &kp A     &kp S     &kp D    &kp F     &kp G     &kp H          &kp J     &kp K     &kp L     &kp SQT   &trans
           &asl    &kp Z     &kp X     &kp C    &kp V     &kp B     &kp N          &kp M     &csc      &dcl      &qxm      &trans
-                                    &h2t LCMD NUMSYM    &trans    &trans          &trans    &trans    &h2t RCMD MRXS
+                                    &tnb LCMD NUMSYM    &trans    &trans          &trans    &trans    &tnb RCMD MRXS
                         >;
                 };
 
@@ -116,7 +116,7 @@
          &pit   &kp DLLR    &trans     &trans   &kp CARET     &kp PLUS       &kp MINUS      &kp STAR      &kp EQUAL     &none    &hbs    &trans
        &trans     &kp N8    &kp N6     &kp N4      &kp N2       &kp N0       &kp N1         &kp N3        &kp N5        &kp N7   &kp N9  &trans
        &trans     &trans    &none       &none        &lrk         &lrg       &lrp           &lrb          &none         &none    &afs    &trans
-                             &h2t LCMD QWERTY      &trans       &trans       &trans         &trans        &h2t LCMD MRXS
+                             &tnb LCMD QWERTY      &trans       &trans       &trans         &trans        &tnb LCMD MRXS
     >;
                 };
 
