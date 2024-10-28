@@ -34,7 +34,7 @@
         // ctrl not freq used on mac - rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rcc LCTRL LCMD' in keymap
 
         //  FROM "HERE TO THERE" (ANY LAYER) & BACK AGAIN: hold tap of modifier key with format - &hta MODIFIER LAYER
-                jul: jump_layer { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "hold-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
+                jul: jump_layer { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&to>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "hold-preferred"; }; // '&jul R/LCMD LAYER' in keymaps
 
     //  TO LAYERS 'HOLD-TAP' BEHAVIORS: mods SPACE keys to: hold-to layer, tap->RET or RET2, 2nd tap returns to starting layer
         // MR X's LAYER TO NUMBER LAYER & BACK AGAIN
