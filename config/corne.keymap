@@ -58,6 +58,18 @@
                 lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
+    //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  ntl dtu rtr gtd
+    ntl: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    dtu: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    rtr: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    gtd: g_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp G>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+
+    //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  stl etu ftr ctd
+    stl: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    etu: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp E>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    ftr: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp F>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+    ctd: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp C>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+
         //  SHIFT NUMBER KEYS FOR F-KEYS
               onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
               tof: two_ftwo { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N2>, <&kp F2>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -79,29 +91,29 @@
                 compatible = "zmk,keymap";
 
                 mrxs_layer {
-        /*   tab-esc   qmark-xmark  cma-semi  dot-col  P      Y        M      L     D      C      F   opt-caps
-            lsft-under      O           A       E      I      U        H      N     T      R      S   rshft-minus
-                ' "     amp-slash       X       Q      K      J        V      B     G      W      Z   bshft-del
+        /*   tab-esc   qmark-xmark  cma-semi  dot-col  P      Y        M      L     D,^     C     F   opt-caps
+            lsft-under      O           A       E      I      U        H      N,<    T     R,>    S   rshft-minus
+                ' "     amp-slash       X       Q      K      J        V      B     G,v     W     Z   bshft-del
                               LCMD-QWERTY     SPC    RET      RET    SPC    RCMD-NUMBER   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc
-        &tes       &qxm       &csc       &dcl        &kp P     &kp Y          &kp M      &kp L       &kp D     &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &kp T     &kp R    &kp S    &rsm
-     &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J          &kp V      &kp B       &kp G     &kp W    &kp Z    &bsd
+                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc ntl dtu rtr gtd
+        &tes       &qxm       &csc       &dcl        &kp P     &kp Y          &kp M      &kp L       &dtu     &kp C    &kp F    &opc RALT 0
+        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &ntl       &kp T     &rtr    &kp S    &rsm
+     &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J          &kp V      &kp B       &gtd     &kp W    &kp Z    &bsd
                              &jul LCMD QWERTY    &kp SPACE     &kp RET        &kp RET    &kp SPACE   &jul RCMD NUMBER
     >;
                 };
 
                 qwerty_layer {
-      /*   tab-esc      Q      W      E         R           T       Y         U        I         O        p            opt-caps
-        lsft_under      A      S      D         F           G       H         J        K         L        ' "          rshft-minus
-         amp-slash      Z      X      C         K           J       V         B        com-semi  dot-col  qmark-xmark  bshft-del
-                                LCMD-NUMBER    SPC        RET       RET      SPC    RCMD-MRXS   */
+      /*   tab-esc      Q     W       E,^       R          T       Y         U        I         O        p            opt-caps
+        lsft_under      A     S,<     D        F,>         G       H         J        K         L        ' "          rshft-minus
+         amp-slash      Z     X      C,v        K          J       V         B        com-semi  dot-col  qmark-xmark  bshft-del
+                                 LCMD-NUMBER   SPC        RET       RET      SPC    RCMD-MRXS   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc
-        &trans    &kp Q     &kp W     &kp E    &kp R     &kp T     &kp Y          &kp U     &kp I     &kp O     &kp P     &trans
-        &trans    &kp A     &kp S     &kp D    &kp F     &kp G     &kp H          &kp J     &kp K     &kp L     &kp SQT   &trans
-          &asl    &kp Z     &kp X     &kp C    &kp V     &kp B     &kp N          &kp M     &csc      &dcl      &qxm      &trans
+                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc stl etu ftr ctd
+        &trans    &kp Q     &kp W     &etu     &kp R     &kp T     &kp Y          &kp U     &kp I     &kp O     &kp P     &trans
+        &trans    &kp A     &stl      &kp D    &ftr      &kp G     &kp H          &kp J     &kp K     &kp L     &kp SQT   &trans
+          &asl    &kp Z     &kp X     &ctd     &kp V     &kp B     &kp N          &kp M     &csc      &dcl      &qxm      &trans
                                     &jul LCMD NUMBER    &trans    &trans          &trans    &trans    &jul RCMD MRXS
                         >;
                 };
