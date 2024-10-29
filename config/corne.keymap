@@ -28,26 +28,8 @@
         //  OPTION KEY 'CAP-SENTENCE' CAPS-WORD & HOLD-TAP BEHAVIORS: mods caps-word to caps-sentence: space, letters, punctuation, & mod keys added to continue
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; tapping-term-ms = <200>; flavor = "tap-preferred"; }; // '&opc RALT 0' in keymap
 
-        //  COMMAND KEY 'CONTROL' HOLD-TAP BEHAVIORS: mods CMND keys to: hold-> CTRL & tap-> CMD+longSTICKY-KEY (tap & next key pressed gives CMD-key)
-        // ctrl not freq used on mac - lsk: long_stickey { compatible = "zmk,behavior-sticky-key"; #binding-cells = <1>; bindings = <&kp>; release-after-ms = <4000>; quick-release; /delete-property/ignore-modifiers;} ;
-        // ctrl not freq used on mac - lcc: lcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&lcc LCTRL LCMD' in keymap
-        // ctrl not freq used on mac - rcc: rcmd_control { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&lsk>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&rcc LCTRL LCMD' in keymap
-
         //  LAYER SWITCHING: hold tap of command key with format - &jtl MODIFIER LAYER
                 jtl: jump_to_layer { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&to>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&jtl R/LCMD LAYER' in keymaps
-
-        //  TO LAYERS 'HOLD-TAP' BEHAVIORS: mods SPACE keys to: hold-to layer, tap->RET or RET2, 2nd tap returns to starting layer
-            // MR X's LAYER TO NUMBER LAYER & BACK AGAIN
-                // mtn: mrx_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&to>; tapping-term-ms = <200>; flavor = "hold-preferred";};  // '&mtn NUMBER RCMD' in mrx keymap
-                // ntm: number_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&to>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "hold-preferred"; }; // '&ntm MRXS RET' in number keymap
-
-                // MR X's LAYER TO QWERTY LAYER & BACK AGAIN
-                // mtq: mrx_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&mtq QWERTY RET' in mrx keymap
-                // qtm: qwerty_to_mrx { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtm MRXS RET' in qwerty keymap
-
-                // QWERTY LAYER TO NUMBER LAYER & BACK AGAIN
-                // qtn: querty_to_number { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&qtn NUMBER RET' in qwerty keymap
-                // ntq: number_to_qwerty { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&to>, <&kp>; tapping-term-ms = <200>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&ntq QWERTY RET' in number keymap
 
         //  NUMBER LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -63,16 +45,16 @@
                 /*
 1234567891123456789212345678931234567894123456789512345678961234567897123456789812345678912345678911234567891123456789212345678931234567894123456789512345678961234
                  */
-                ntl: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                dtu: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                rtr: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                gtd: g_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp G>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                ntl: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                dtu: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                rtr: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                gtd: g_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp G>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
 
                 //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  stl etu ftr ctd
-                stl: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                etu: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp E>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                ftr: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp F>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-                ctd: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp C>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                stl: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                etu: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp E>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                ftr: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp F>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+//                ctd: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp C>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
 
         //  SHIFT NUMBER KEYS FOR F-KEYS
               onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
