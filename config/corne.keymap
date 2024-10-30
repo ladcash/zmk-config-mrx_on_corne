@@ -41,7 +41,7 @@
                 lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
         // NAVIGATING WITH ARROW KEYS
-                key: name { compatible = "zmk,behavior-mod-morph"; label = "LABEL"; #binding-cells = <0>; bindings = <WITHOUT MOD BEHAVIOR>, <WITH MOD BEHAVIOR>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
+                // key: name { compatible = "zmk,behavior-mod-morph"; label = "LABEL"; #binding-cells = <0>; bindings = <WITHOUT MOD BEHAVIOR>, <WITH MOD BEHAVIOR>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
                 //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  nt2l d2u r2r g2d    /*
 1234567891123456789212345678931234567894123456789512345678961234567897123456789812345678912345678911234567891123456789212345678931234567894123456789512345678961234  */
               // n2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
