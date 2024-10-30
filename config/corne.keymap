@@ -48,7 +48,7 @@
               // n2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // d2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // r2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              t2d: t_to_down { compatible = "zmk,behavior-mod-morph"; label = "T2DOWN"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
+              t2d: t_to_down { compatible = "zmk,behavior-mod-morph"; label = "T2DOWN"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_LSFT|MOD_RCMD|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
 
               //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  s2l e2u f2r c2d
               //  s2i: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
