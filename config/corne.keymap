@@ -41,20 +41,18 @@
                 lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
         // ARROW KEYS NAVIGATION
-                //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  ntl dtu rtr gtd
-                /*
-1234567891123456789212345678931234567894123456789512345678961234567897123456789812345678912345678911234567891123456789212345678931234567894123456789512345678961234
-                 */
-              // ntl: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              // dtu: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              // rtr: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              ttd: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(|(MOD_LCMD)>; };
+                //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  nt2l d2u r2r g2d    /*
+1234567891123456789212345678931234567894123456789512345678961234567897123456789812345678912345678911234567891123456789212345678931234567894123456789512345678961234  */
+              // n2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              // d2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              // r2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              t2d: t_to_down { compatible = "zmk,behavior-mod-morph"; label = "T2DOWN"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
 
-              //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  stl etu ftr ctd
-              //  stl: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              //  etu: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp E>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              //  ftr: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp F>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              //  ctd: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp C>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  s2l e2u f2r c2d
+              //  s2i: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              //  e2u: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp E>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              //  f2r: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp F>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              //  c2d: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp C>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
 
         //  SHIFT NUMBER KEYS FOR F-KEYS
               onf: one_fone { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp F1>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -82,9 +80,9 @@
                 ' "     amp-slash       X       Q      K      J        V      B     G,v     W     Z   bshft-del
                               LCMD-QWERTY     SPC    RET      RET    SPC    RCMD-NUMBER   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc ntl dtu rtr gtd
+                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc n2l d2u r2r gtd
         &tes       &qxm       &csc       &dcl        &kp P     &kp Y          &kp M      &kp L       &kp D     &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &ttd    &kp R    &kp S    &rsm
+        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &t2d      &kp R    &kp S    &rsm
      &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J          &kp V      &kp B       &kp G     &kp W    &kp Z    &bsd
                              &jtl LCMD QWERTY    &kp SPACE     &kp RET        &kp RET    &kp SPACE   &jtl RCMD NUMBER
     >;
@@ -96,7 +94,7 @@
          amp-slash      Z     X      C,v        K          J       V         B        com-semi  dot-col  qmark-xmark  bshft-del
                                  LCMD-NUMBER   SPC        RET       RET      SPC    RCMD-MRXS   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc stl etu ftr ctd
+                        bindings = <  // tes qxm csc dcl bsd opc lsq asl rsn lcc rcc s2i e2u f2r c2d
         &trans    &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y          &kp U     &kp I     &kp O     &kp P     &trans
         &trans    &kp A     &kp S      &kp D    &kp F      &kp G     &kp H          &kp J     &kp K     &kp L     &kp SQT   &trans
           &asl    &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N          &kp M     &csc      &dcl      &qxm      &trans
