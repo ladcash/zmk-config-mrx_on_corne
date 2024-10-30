@@ -48,7 +48,7 @@
               // ntl: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // dtu: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // rtr: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              // gtd: g_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp G>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              ttd: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
 
               //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  stl etu ftr ctd
               //  stl: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
@@ -84,7 +84,7 @@
 
                         bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc ntl dtu rtr gtd
         &tes       &qxm       &csc       &dcl        &kp P     &kp Y          &kp M      &kp L       &kp D     &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &kp T    &kp R    &kp S    &rsm
+        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U          &kp H      &kp N       &ttd    &kp R    &kp S    &rsm
      &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J          &kp V      &kp B       &kp G     &kp W    &kp Z    &bsd
                              &jtl LCMD QWERTY    &kp SPACE     &kp RET        &kp RET    &kp SPACE   &jtl RCMD NUMBER
     >;
