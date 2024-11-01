@@ -87,7 +87,7 @@
 
                         bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc n2l d2u r2r gtd
         &tes       &qxm       &csc       &dcl        &kp P     &kp Y        &kp M      &kp L       &kp D     &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U        &kp H      &kp N       &kp ttd   &kp R    &kp S    &rsm
+        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U        &kp H      &kp N       &ttd      &kp R    &kp S    &rsm
      &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J        &kp V      &kp B       &kp G     &kp W    &kp Z    &bsd
                                 &jtl LCMD QWE    &kp SPACE   &kp RET        &kp RET    &kp SPACE   &jtl RCMD NUM
     >;
