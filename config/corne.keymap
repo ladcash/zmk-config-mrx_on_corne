@@ -7,8 +7,15 @@
         #define MRXS 0
         #define QWERTY  1
         #define NUMBER 2
-        #define GAMERS
-        // #define THEORY 3
+
+        /*
+        #define MRX 0       // Mr. X's Keyboard Scheme
+        #define QWE 1       // QWERTY
+        #define NUM 2       // NUMBER
+        #define THE 3       // THEORY
+        #define XXX &none
+        #define ___ &trans
+        */
 
         // ADDS CONTINUE LIST TO CAPS-WORD TURNING IT INTO CAPS-SENTENCE
         &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE BSPC>; }; // <RETURN> cancels caps word
@@ -48,7 +55,8 @@
               // n2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // d2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_LCMD|MOD_RCMD)>; };
               // r2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
-              // t2d: t_to_down { compatible = "zmk,behavior-mod-morph"; label = "T2DOWN"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_LSFT|MOD_RCMD|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
+               ttd: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; };
+              // td: t_to_down { compatible = "zmk,behavior-mod-morph"; label = "TTODOWN"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_LCMD|MOD_RCMD)>; keep-mods = <(MOD_LSFT)>; };
 
               //  S, T, F & C KEYS MODDED FOR QWERTY NAVIGATION:  s2l e2u f2r c2d
               //  s2i: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_LCMD|MOD_RCMD)>; };
