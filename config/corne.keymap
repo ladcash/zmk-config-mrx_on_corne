@@ -17,10 +17,11 @@
 */
         // CAPS-WORD CONTINUE LIST TURNING IT INTO CAPS-SENTENCE
         &caps_word { continue-list = <SPACE DOT COMMA SEMI COLON UNDER MINUS AMPS EXCL SLASH TAB STAR PIPE BSPC>; };
+
 / {
         behaviors {
         //  DEFAULT LAYER:
-                //  mod-morphs to shifted keys giving them new partners
+                //  mod-morphitg shifted keys giving them new partners
                 tes: tab_escape { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp TAB>, <&kp ESC>; mods = <(MOD_RSFT|MOD_RSFT)>; };
                 qxm: qmark_xmark { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp QMARK>, <&kp EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
                 csc: comma_scolon { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -33,10 +34,10 @@
                 //  hold-tap for 'option/cap-sentence' key by adding continue list to caps-word: spaces, any letter, punctuation, & modified keys
                 opc: opt_caps { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&caps_word>; tapping-term-ms = <280>; flavor = "tap-preferred"; }; // '&opc RALT 0' in keymap
 
-        //  LAYER SWITCHING: hold tap of command key with format - &jtl MODIFIER LAYER
+                //  hold-tap & to-layer of command keys switching between BASE, QWERTY & NUMBERS layers with format: &jtl MODIFIER LAYER
                 jtl: jump_to_layer { compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>; bindings = <&kp>, <&to>; tapping-term-ms = <280>; quick-tap-ms = <0>; flavor = "tap-preferred"; }; // '&jtl R/LGUI LAYER' in keymaps
 
-        //  NUMBER LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
+                //  NUMBER LAYER SHIFTED KEYS SWITCHING PARTNERS   pit hbs afs lrp lrc lrb lrk pit   nf tf thf fof fif sif sef eif nif zef elf twf
                 pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
@@ -49,10 +50,10 @@
                 // key: name { compatible = "zmk,behavior-mod-morph"; label = "LABEL"; #binding-cells = <0>; bindings = <WITHOUT MOD BEHAVIOR>, <WITH MOD BEHAVIOR>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
                 //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  h2l l2u t2r n2d
 
-               h2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               l2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               t2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               n2d: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               h2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp H>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               l2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp L>, <&kp UP>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               t2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp RIGHT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               n2d: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp DOWN>; mods = <(MOD_RGUI|MOD_LGUI)>; };
 
               //  S, T, F & C KEYS MODDED FOR QWE NAVIGATION:  s2l e2u f2r d2d
                 s2l: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
