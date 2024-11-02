@@ -5,11 +5,11 @@
         #include <dt-bindings/zmk/rgb.h>
         // #include "zmk-helpers/helper.h"
         // #include "zmk-helpers/unicode-chars/greek.dtsi"
-
-        #define MRX 0       // Mr. X's Keyboard Scheme
-        #define QWE 1       // QWERTY
-        #define NUM 2       // NUMBER
-     // #define THE 3       // THEORY
+s
+        #define MRX 0       // MrX's DVORAKish KEY LAYOUT
+        #define QWE 1       // QWERTY KEY LAYOUT
+        #define NUM 2       // NUMBERS & SYMBOLS
+     // #define Mth 3       // MATH THEORY
         #define ___ &none
         #define xxx &trans
 /*
@@ -47,12 +47,12 @@
 
         // NAVIGATING WITH ARROW KEYS
                 // key: name { compatible = "zmk,behavior-mod-morph"; label = "LABEL"; #binding-cells = <0>; bindings = <WITHOUT MOD BEHAVIOR>, <WITH MOD BEHAVIOR>; mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>; keep-mods = <(MOD_LSFT)>; };
-                //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  n2l d2u r2r t2d
+                //  N, D, R & G KEYS MODDED FOR MRX NAVIGATION:  h2l l2u t2r n2d
 
-               n2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               d2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               r2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-               t2d: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               h2l: n_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               l2u: d_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp UP>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               t2r: r_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp R>, <&kp RIGHT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
+               n2d: t_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp T>, <&kp DOWN>; mods = <(MOD_RGUI|MOD_LGUI)>; };
 
               //  S, T, F & C KEYS MODDED FOR QWE NAVIGATION:  s2l e2u f2r d2d
                 s2l: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
@@ -86,9 +86,9 @@
                 ' "     amp-slash       X       Q      K      J        V      B     G,v     W     Z   bshft-del
                                  LGUI-QWE     SPC    RET      RET    SPC      RGUI-NUM   */
 
-                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc n2l d2u r2r t2d
-        &tes       &qxm       &csc       &dcl        &kp P     &kp Y        &kp M      &kp L       &d2u       &kp C    &kp F    &opc RALT 0
-        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U        &kp H      &n2l        &t2d       &r2r     &kp S    &rsm
+                        bindings = <  // tes qxm csc dcl bsd opc qtq asl qtq lcc rcc h2l l2u t2r n2d
+        &tes       &qxm       &csc       &dcl        &kp P     &kp Y        &kp M      &l2u        &kp D      &kp C    &kp F    &opc RALT 0
+        &lsu      &kp O      &kp A      &kp E        &kp I     &kp U        &h2l       &n2d        &t2r       &kp R    &kp S    &rsm
      &kp SQT       &asl      &kp X      &kp Q        &kp K     &kp J        &kp V      &kp B       &kp G      &kp W    &kp Z    &bsd
                                 &jtl LGUI QWE    &kp SPACE   &kp RET        &kp RET    &kp SPACE   &jtl RGUI NUM
                         >;
@@ -122,9 +122,9 @@
                                 &jtl LGUI QWE      &trans     &trans       &trans      &trans      &jtl RGUI MRX
                         >;
                 };
-
-/*            the_layer {
-         /* trons    &        ,      .       ∨       +         -        ^        =      *       #    trans
+                // MATH THEORY LAYER 
+/*            mth_layer {
+         /* trans    &        ,      .       ∨       +         -        ^        =      *       #    trans
             trans   8-F8    6-F6    4-F4    2-F2    0-F0      1-F1     3-F3     5-F5   7-F7   9-F9   trans
               |     @-/       [      <       {       (          )       }        >      ]       \    trans
                                 lcm_cnt  lspc-num   &RET      &RET   rsp_sym  rcm_cnt  */
