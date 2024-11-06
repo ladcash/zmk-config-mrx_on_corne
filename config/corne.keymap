@@ -62,22 +62,24 @@
                 elf: minus_feleven { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp MINUS>, <&kp F11>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 twf: two_ftwelve { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp F12>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
-                //  mod-morphing number layer shifted symbol keys to give them new shifted partners | pit hbs afs lrp lrc lrb lrk pit
-                pit: pipe_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-                hbs: hash_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp HASH>, <&kp BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-                afs: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                //  mod-morphing number layer shifted symbol keys to give them new shifted partners | dha eqt plm stp pbs lrp lrg lrb lrk atf
+                dha: dollar_hash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOLLAR>, <&kp HASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                eqt: equal_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp EQUAL>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                plm: plus_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                stp: star_percent { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp STAR>, <&kp PERCENT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                pbs: pipe_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp BACKSLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrp: lperan_rperan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp RPAR>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrg: gthan_lthan { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LT>,<&kp GT> ; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrb: lbrace_rbrace { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBRC>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 lrk: lbraket_rbraket { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp RBKT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                atf: at_fslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp AT>, <&kp FSLH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
 
+        // NAVIGATION LAYER
               //  A, W, D & S KEYS MODDED FOR QWERTY NAVIGATION:  a2l w2u d2r s2d
                 a2l: s_to_left { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp A>, <&kp LEFT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
                 w2u: e_to_up { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp W>, <&kp UP>; mods = <(MOD_RGUI|MOD_LGUI)>; };
                 d2r: f_to_right { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp D>, <&kp RIGHT>; mods = <(MOD_RGUI|MOD_LGUI)>; };
                 s2d: c_to_down { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp S>, <&kp DOWN>; mods = <(MOD_RGUI|MOD_LGUI)>; };
-
-        // NAVIGATION LAYER
 
         //  MATHS LAYER:
         // special & unicode characters of formal logic, set, number & group theory
@@ -87,7 +89,7 @@
         // LAYER KEYMAPS
         keymap {
                 compatible = "zmk,keymap";
-                // BASE LAYER
+                // DEFAULT LAYER
                 mrx_layer {
         /*   tab-esc   qmark-xmark  cma-semi  dot-col  P      Y        M      L     D,^     C     F   opt-caps
             lsft-under      O           A       E      I      U        H      N,<    T     R,>    S   rshft-minus
@@ -116,18 +118,18 @@
                         >;
                 };
                // NUMBER LAYER
-               num_layer {                                                                  // cmd-copy
-/*         tab-esc       $      , ;       : .       ^       +        -       *       =         XXX-^C   @ /     opt-caps
-        lsft-under    8-F8     6-F6      4-F4    2-F2    0-F0        1-F1    3-F3    5-F5      7-F7     9-F9    rshft-minus
-        pipe-tilde     & /    XXX-^X      XXX     [ ]     < >        ( )^V   { }     XXX       XXX      #-\     bshft-del
+               num_layer {
+/*         tab-esc     $ #       , ;      : .      ^       = ~        + -    * %     ___       ^-^C       sleep      opt-caps
+        lsft-under    8-F8      6-F6     4-F4    2-F2    0-F0        1-F1    3-F3    5-F5      7-F7       9-F9    rshft-minus
+              '  "     & /   (??)-^X      |-\     [ ]     < >        ( )^V   { }     XXX       XXX        @ /     bshft-del
                                      LGUI-QWE     SPC     RET        RET     SPC     RGUI-MRX
-                          // cmd-cut                            // cmd-paste                                              */
+                          // cmd-cut    pipe-tilde                // cmd-paste                                              */
 
-                        bindings = <
-       ___    &kp DLLR      ___          ___  &kp CARET  &kp PLUS       &kp MINUS   &kp STAR   &kp EQUAL    xxx      &hbs     ___
-       ___      &kp N8      &kp N6    &kp N4     &kp N2    &kp N0       &kp N1      &kp N3     &kp N5       &kp N7   &kp N9   ___
-       &pit        ___      xxx          xxx       &lrk      &lrg       &lrp        &lrb       xxx          xxx      &afs     ___
-                                &jtl LGUI QWE       ___       ___       ___         ___        &jtl RGUI MRX
+                        bindings = <  // dha eqt plm stp pbs lrk lrg lrp lrb  atf
+       ___      &dha       ___        ___   &kp CARET       &eqt         &plm       &stp      ___        ___      &kp C_SLEEP  ___
+       ___    &kp N8    &kp N6     &kp N4      &kp N2     &kp N0         &kp N1     &kp N3    &kp N5     &kp N7   &kp N9       ___
+       ___       ___       ___       &pbs        &lrk       &lrg         &lrp       &lrb      xxx        xxx      &atf         ___
+                            &jtl LGUI QWE         ___        ___         ___        ___       &jtl RGUI MRX
                         >;
                 };
                 // MATH THEORY LAYER 
