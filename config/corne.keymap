@@ -64,7 +64,7 @@
 
                 //  mod-morphing number layer shifted symbol keys to give them new shifted partners | dha eqt plm stp pbs lrp lrg lrb lrk atf
                 dha: dollar_hash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOLLAR>, <&kp HASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
-                eqt: equal_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp EQUAL>, <&kp TILDE>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+                eqt: equal_tilde { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp EQUAL>, <&kp TILDE2>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 plm: plus_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PLUS>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 stp: star_percent { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp STAR>, <&kp PERCENT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
                 pbs: pipe_bslash { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp PIPE>, <&kp BACKSLASH>; mods = <(MOD_LSFT|MOD_RSFT)>; };
